@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDSEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IBO_TRX_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityId" Type="bigint" Nullable="false" />
+          <Property Name="SupplierId" Type="bigint" />
+          <Property Name="CustomerId" Type="bigint" />
+          <Property Name="Supplier" Type="nvarchar" MaxLength="200" />
+          <Property Name="Customer" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="UnitCost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="CDSEntityModelStoreContainer">
+          <EntitySet Name="IBO_TRX_Header" EntityType="Self.IBO_TRX_Header" Schema="CDS_IBO" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDSEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BuyoutEntityTables" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="IBO_TRX_Header" EntityType="CDSEntityModel.IBO_TRX_Header" />
+        </EntityContainer>
+        <EntityType Name="IBO_TRX_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityId" Type="Int64" Nullable="false" />
+          <Property Name="SupplierId" Type="Int64" />
+          <Property Name="CustomerId" Type="Int64" />
+          <Property Name="Supplier" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="UnitCost" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDSEntityModelStoreContainer" CdmEntityContainer="BuyoutEntityTables">
+          <EntitySetMapping Name="IBO_TRX_Header">
+            <EntityTypeMapping TypeName="CDSEntityModel.IBO_TRX_Header">
+              <MappingFragment StoreEntitySet="IBO_TRX_Header">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

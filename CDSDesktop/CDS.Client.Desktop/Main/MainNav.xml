@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Main Id="0"  Tag="Main Menu" Key = "`" Color = "57,128,193" Image = "cancel_128" >
+  <Stock	Id = "1" Parent = "0"  Tag="Stock" Key = "1" Color = "182,190,80" Image = "box_128" >
+    <Documents_and_Enquiries	Id = "11" Parent = "1"  Tag="Documents &amp; Enquiries" Key = "1" Color = "182,190,80" Image = "cancel_128" >
+      <New_Document	Id = "111" Parent = "11"  Tag="New Document" Key = "1" Color = "57,128,193" Image = "cancel_128" >
+        <Debtor	Id = "1111" Parent = "111"  Tag="Debtor" Key = "1" Color = "57,128,193" Image = "filled_box_128" >
+          <Quote	Id = "11111" Parent = "1111"  Tag="Sales Quote" Key = "1" Color = "107,224,93" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.Customer.QuoteForm</Screen>
+          </Quote>
+          <Order	Id = "11112" Parent = "1111"  Tag="Sales Order" Key = "2" Color = "93,216,229" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.Customer.SalesOrderForm</Screen>
+          </Order>
+          <Credit_Note	Id = "11113" Parent = "1111"  Tag="Sales Credit" Key = "3" Color = "255,255,92" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.Customer.CreditNoteForm</Screen>
+          </Credit_Note>
+        </Debtor>
+        <Creditor	Id = "1112" Parent = "111"  Tag="Creditors" Key = "1" Color = "57,128,193" Image = "cancel_128" >
+          <Order	Id = "11122" Parent = "1112"  Tag="Purchase Order" Key = "1" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.Supplier.PurchaseOrderForm</Screen>
+          </Order>
+          <Invoice	Id = "11122" Parent = "1112"  Tag="Goods Received" Key = "2" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.Supplier.GoodsReceivedForm</Screen>
+          </Invoice>
+          <Credit_Note	Id = "11123" Parent = "1112"  Tag="Goods Returned" Key = "3" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.Supplier.GoodsReturnedForm</Screen>
+          </Credit_Note>
+        </Creditor>
+      </New_Document>
+      <Existing_Document	Id = "112" Parent = "11"  Tag="Existing Document" Key = "2" Color = "57,128,193" Image = "cancel_128" >
+        <Debtor	Id = "1121" Parent = "112"  Tag="Debtors" Key = "1" Color = "89,124,194" Image = "filled_box_128" >
+          <Quote	Id = "11211" Parent = "1121"  Tag="Sales Quote" Key = "1" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Quote>
+          <Order	Id = "11212" Parent = "1121"  Tag="Sales Order" Key = "2" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Order>
+          <Invoice	Id = "11213" Parent = "1121"  Tag="Sales Invoice" Key = "3" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Invoice>
+          <Credit_Note	Id = "11214" Parent = "1121"  Tag="Credit Note" Key = "4" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Credit_Note>
+          <Backorder	Id = "11215" Parent = "1121"  Tag="Backorder" Key = "5" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Backorder>
+        </Debtor>
+        <Creditor	Id = "1122" Parent = "112"  Tag="Creditors" Key = "2" Color = "255,84,92" Image = "cancel_128" >
+          <Order	Id = "11222" Parent = "1122"  Tag="Purchase Order" Key = "1" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Order>
+          <Invoice	Id = "11223" Parent = "1122"  Tag="Purchase Invoice" Key = "2" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Invoice>
+          <Credit_Note	Id = "11224" Parent = "1122"  Tag="Purchase Credit Note" Key = "3" Color = "57,128,193" Image = "cancel_128" >
+            <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+          </Credit_Note>
+        </Creditor>
+      </Existing_Document>
+    </Documents_and_Enquiries>
+    <Automatic_Ordering	Id = "12" Parent = "1"  Tag="Automatic Ordering" Key = "2" Color = "57,128,193" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.ITM.Ordering.AutomaticOrderingList</Screen>
+    </Automatic_Ordering>
+    <Take_on_and_Edit	Id = "13" Parent = "1"  Tag="Take-on &amp; Edit" Key = "3" Color = "211,72,39" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.ITM.Inventory.InventoryList</Screen>
+    </Take_on_and_Edit>
+    <Bulk_Update	Id = "14" Parent = "1"  Tag="Bulk Update" Key = "4" Color = "93,93,93" Image = "cancel_128" >
+      <Execute	Id = "141" Parent = "14"  Tag="Execute" Key = "1" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Execute>
+      <Change	Id = "142" Parent = "14"  Tag="Change" Key = "2" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Change>
+      <Create_New	Id = "143" Parent = "14"  Tag="Create New" Key = "3" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Create_New>
+    </Bulk_Update>
+    <Stock_Take	Id = "15" Parent = "1"  Tag="Stock-Take" Key = "5" Color = "165,110,74" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.ITM.StockTake.StockTakeList</Screen>
+    </Stock_Take>
+    <Discount_Matrix	Id = "16" Parent = "1"  Tag="Discount Matrix" Key = "6" Color = "91,155,85" Image = "cancel_128" >
+      <Screen></Screen>
+    </Discount_Matrix>
+  </Stock>
+  <Debtors	Id = "2" Parent = "0"  Tag="Debtors" Key = "2" Color = "57,128,193" Image = "filled_box_128" >
+    <Debtors_Journal	Id = "21" Parent = "2"  Tag="Debtors Journal" Key = "" Color = "0,158,175" Image = "cancel_128" >
+      <Screen></Screen>
+    </Debtors_Journal>
+    <Bulk_Update	Id = "22" Parent = "2"  Tag="Bulk Update" Key = "" Color = "93,93,93" Image = "cancel_128" >
+      <Execute	Id = "221" Parent = "22"  Tag="Execute" Key = "" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Execute>
+      <Change	Id = "222" Parent = "22"  Tag="Change" Key = "" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Change>
+      <Create_New	Id = "223" Parent = "22"  Tag="Create New" Key = "" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Create_New>
+    </Bulk_Update>
+    <Transaction_Listing	Id = "23" Parent = "2"  Tag="Transaction Listing" Key = "" Color = "109,108,158" Image = "cancel_128" >
+      <Screen></Screen>
+    </Transaction_Listing>
+    <Take_on_and_Edit	Id = "24" Parent = "2"  Tag="Take-on &amp; Edit" Key = "" Color = "211,72,39" Image = "cancel_128" >
+      <Tile>
+        <Tag></Tag>
+        <Screen></Screen>
+      </Tile>
+    </Take_on_and_Edit>
+    <Interest_Generator	Id = "25" Parent = "2"  Tag="Interest Generator" Key = "" Color = "57,128,193" Image = "cancel_128" >
+      <Screen></Screen>
+    </Interest_Generator>
+    <Receive_Payments	Id = "26" Parent = "2"  Tag="Receive Payments" Key = "" Color = "91,155,85" Image = "cancel_128" >
+      <Screen></Screen>
+    </Receive_Payments>
+    <Journal_Entry	Id = "27" Parent = "2"  Tag="Journal Entry" Key = "" Color = "0,158,175" Image = "cancel_128" >
+      <Screen></Screen>
+    </Journal_Entry>
+  </Debtors>
+  <Creditors	Id = "3" Parent = "0"  Tag="Creditors" Key = "3" Color = "159,63,62" Image = "product_128" >
+    <Creditors_Journal	Id = "31" Parent = "3"  Tag="Creditors Journal" Key = "" Color = "0,158,175" Image = "cancel_128" >
+      <Screen></Screen>
+    </Creditors_Journal>
+    <Bulk_Update	Id = "32" Parent = "3"  Tag="Bulk Update" Key = "" Color = "93,93,93" Image = "cancel_128" >
+      <Execute	Id = "321" Parent = "32"  Tag="Execute" Key = "" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Execute>
+      <Change	Id = "322" Parent = "32"  Tag="Change" Key = "" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Change>
+      <Create_New	Id = "323" Parent = "32"  Tag="Create New" Key = "" Color = "57,128,193" Image = "cancel_128" >
+        <Screen></Screen>
+      </Create_New>
+    </Bulk_Update>
+    <Transaction_Listing	Id = "33" Parent = "3"  Tag="Transaction Listing" Key = "" Color = "109,108,158" Image = "cancel_128" >
+      <Screen></Screen>
+    </Transaction_Listing>
+    <Take_on_and_Edit	Id = "34" Parent = "3"  Tag="Take-on &amp; Edit" Key = "" Color = "211,72,39" Image = "cancel_128" >
+      <Screen></Screen>
+    </Take_on_and_Edit>
+    <Receive_Bills	Id = "35" Parent = "3"  Tag="Receive Bills" Key = "" Color = "91,155,85" Image = "cancel_128" >
+      <Screen></Screen>
+    </Receive_Bills>
+    <Make_Payments	Id = "36" Parent = "3"  Tag="Make Payments" Key = "" Color = "159,63,62" Image = "cancel_128" >
+      <Screen></Screen>
+    </Make_Payments>
+    <Journal_Entry	Id = "37" Parent = "3"  Tag="Journal Entry" Key = "" Color = "57,128,193" Image = "cancel_128" >
+      <Screen></Screen>
+    </Journal_Entry>
+  </Creditors>
+  <Workshop	Id = "4" Parent = "0"  Tag="Workshop" Key = "4" Color = "93,93,93" Image = "workers_128" >
+    <JobCard	Id = "41" Parent = "4"  Tag="Job Card" Key = "" Color = "211,72,39" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.DOC.Workshop.JobForm</Screen>
+    </JobCard> 
+    <Take_on_and_Edit	Id = "41" Parent = "4"  Tag="Take-on &amp; Edit" Key = "" Color = "211,72,39" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.DOC.BaseDocumentList</Screen>
+    </Take_on_and_Edit>
+  </Workshop>
+  <Accounts	Id = "5" Parent = "0"  Tag="Accounts" Key = "5" Color = "165,110,74" Image = "bookmark_128" >
+    <General_Ledger	Id = "51" Parent = "5"  Tag="General Ledger" Key = "" Color = "57,128,193" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.GLX.EntryList</Screen>
+    </General_Ledger>
+    <Cash_Book	Id = "52" Parent = "5"  Tag="Cash Book" Key = "" Color = "57,128,193" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.GLX.ReconList</Screen>
+    </Cash_Book>
+  </Accounts>
+  <Reports	Id = "6" Parent = "0"  Tag="Reports" Key = "6" Color = "91,155,85" Image = "combo_128" >
+    <Open_Reports	Id = "61" Parent = "6"  Tag="Open Reports" Key = "" Color = "57,128,193" Image = "cancel_128" >
+      <Screen>CDS.Client.Desktop.RPT.ReportList</Screen>
+    </Open_Reports>
+  </Reports>
+</Main>

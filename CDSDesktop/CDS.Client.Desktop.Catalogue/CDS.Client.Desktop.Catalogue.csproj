@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DD41114-D78C-47D3-A72C-2A5030B1D74B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.Client.Desktop.Catalogue</RootNamespace>
+    <AssemblyName>CDS.Client.Desktop.Catalogue</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>1e5ee9e7</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\CDS.Client.Desktop.Essential\CDSRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Data.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Utils.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Xpo.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraBars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraLayout.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraTreeList.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraVerticalGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\CDS.Shared.Resources\References\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAT\AddCatalogueEntityDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\AddCatalogueEntityDialogue.Designer.cs">
+      <DependentUpon>AddCatalogueEntityDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAT\AddCatalogueItemDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\AddCatalogueItemDialogue.Designer.cs">
+      <DependentUpon>AddCatalogueItemDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAT\CatalogueExtender.cs" />
+    <Compile Include="CAT\CatalogueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\CatalogueForm.designer.cs">
+      <DependentUpon>CatalogueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAT\CatalogueImportExportDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\CatalogueImportExportDialogue.designer.cs">
+      <DependentUpon>CatalogueImportExportDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAT\CatalogueList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\CatalogueList.Designer.cs">
+      <DependentUpon>CatalogueList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAT\CatalogueManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\CatalogueManagementForm.Designer.cs">
+      <DependentUpon>CatalogueManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAT\ViewImageDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAT\ViewImageDialogue.Designer.cs">
+      <DependentUpon>ViewImageDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.CAT_Catalogue.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.CAT_Category.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.CAT_Item.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.CAT_ItemData.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.CAT_Meta.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.VW_MetaData.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.Desktop.Catalogue.CAT.EntryMeta.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CAT\AddCatalogueEntityDialogue.resx">
+      <DependentUpon>AddCatalogueEntityDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAT\AddCatalogueItemDialogue.resx">
+      <DependentUpon>AddCatalogueItemDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAT\CatalogueForm.resx">
+      <DependentUpon>CatalogueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAT\CatalogueImportExportDialogue.resx">
+      <DependentUpon>CatalogueImportExportDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAT\CatalogueList.resx">
+      <DependentUpon>CatalogueList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAT\CatalogueManagementForm.resx">
+      <DependentUpon>CatalogueManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAT\ViewImageDialogue.resx">
+      <DependentUpon>ViewImageDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\book_blue_add_16.png" />
+    <Content Include="Resources\book_blue_add_32.png" />
+    <Content Include="Resources\book_blue_delete_16.png" />
+    <Content Include="Resources\book_blue_delete_32.png" />
+    <Content Include="Resources\book_bookmark_16.png" />
+    <Content Include="Resources\book_bookmark_32.png" />
+    <Content Include="Resources\components_add_16.png" />
+    <Content Include="Resources\components_add_32.png" />
+    <Content Include="Resources\components_delete_16.png" />
+    <Content Include="Resources\components_delete_32.png" />
+    <Content Include="Resources\component_blue_add_16.png" />
+    <Content Include="Resources\component_blue_add_32.png" />
+    <Content Include="Resources\component_blue_delete_16.png" />
+    <Content Include="Resources\component_blue_delete_32.png" />
+    <Content Include="Resources\tag_add_16.png" />
+    <Content Include="Resources\tag_add_32.png" />
+    <Content Include="Resources\tag_delete_16.png" />
+    <Content Include="Resources\tag_delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDS.Client.BusinessLayer\CDS.Client.BusinessLayer.csproj">
+      <Project>{1db405c2-c4c6-42f8-8895-70c2e9dc37c1}</Project>
+      <Name>CDS.Client.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.DataAccessLayer\CDS.Client.DataAccessLayer.csproj">
+      <Project>{6fed544f-d28e-4351-9f48-2322abbd2ab2}</Project>
+      <Name>CDS.Client.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Essential\CDS.Client.Desktop.Essential.csproj">
+      <Project>{c2192bb4-bfc0-425f-be3f-07c398f88067}</Project>
+      <Name>CDS.Client.Desktop.Essential</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Exception\CDS.Shared.Exception.csproj">
+      <Project>{086d0531-5ad2-409b-9b49-40f93c98d4c4}</Project>
+      <Name>CDS.Shared.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Resources\CDS.Shared.Resources.csproj">
+      <Project>{32f912e6-0ae3-41e0-aff7-b9e4c99f208f}</Project>
+      <Name>CDS.Shared.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

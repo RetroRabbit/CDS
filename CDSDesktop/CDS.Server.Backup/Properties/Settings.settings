@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CDS.Server.Backup.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="acc" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cds@afrigis</Value>
+    </Setting>
+    <Setting Name="CDSBackup_WebReference_MMSGatewayService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://196.35.231.50:80/MMSGateway/MMSGateway</Value>
+    </Setting>
+    <Setting Name="conn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Password=rabbit; Persist Security Info=True;User ID=sa;Initial Catalog=cds_test;Data Source=rabbitsql</Value>
+    </Setting>
+    <Setting Name="contacts" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cds</Value>
+    </Setting>
+    <Setting Name="remotebackday" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Tuesday</Value>
+    </Setting>
+    <Setting Name="remotebackupdate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="remoteserver" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://demo.retrorabbit.co.za/</Value>
+    </Setting>
+    <Setting Name="site" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="spmin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">48</Value>
+    </Setting>
+    <Setting Name="spname" Type="System.String" Scope="User">
+      <Value Profile="(Default)">spCheck_Daily</Value>
+    </Setting>
+    <Setting Name="sptime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">17</Value>
+    </Setting>
+    <Setting Name="backupdirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\</Value>
+    </Setting>
+    <Setting Name="backupmin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="backuptime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">11</Value>
+    </Setting>
+    <Setting Name="databasename" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cds_bps</Value>
+    </Setting>
+    <Setting Name="daysOld" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

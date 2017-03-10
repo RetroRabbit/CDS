@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22220/CDSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CDS.Client.DataAccessLayer.DB" />
+  <xs:import schemaLocation="http://localhost:22220/CDSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:22220/CDSService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CDS.Client.DataAccessLayer.Types" />
+  <xs:element name="SaveDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CDS.Client.DataAccessLayer.DB" minOccurs="0" name="entry" nillable="true" type="q1:SYS_DOC_Header" />
+        <xs:element minOccurs="0" name="printer" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+        <xs:element minOccurs="0" name="printerBy" type="xs:long" />
+        <xs:element minOccurs="0" name="printer" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrintDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entryId" type="xs:long" />
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApproveDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entryId" type="xs:long" />
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entryId" type="xs:long" />
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RejectDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveJobLines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="headerid" type="xs:long" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CDS.Client.DataAccessLayer.DB" minOccurs="0" name="lines" nillable="true" type="q2:ArrayOfSYS_DOC_Line" />
+        <xs:element minOccurs="0" name="printer" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveJobLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveJobLinesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:long" />
+        <xs:element minOccurs="0" name="createdBy" type="xs:long" />
+        <xs:element minOccurs="0" name="printer" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateOrderResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailablePrinter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excludeLocation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailablePrinterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAvailablePrinterResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DistributedTransactionServiceRunning">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DistributedTransactionServiceRunningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DistributedTransactionServiceRunningResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessStatements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="periodId" type="xs:long" />
+        <xs:element minOccurs="0" name="printerId" nillable="true" type="xs:long" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CDS.Client.DataAccessLayer.Types" minOccurs="0" name="statements" nillable="true" type="q4:ArrayOfStatement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessStatementsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessStatementsUpdate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessStatementsUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CDS.Client.DataAccessLayer.Types" minOccurs="0" name="ProcessStatementsUpdateResult" nillable="true" type="q5:ArrayOfStatement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

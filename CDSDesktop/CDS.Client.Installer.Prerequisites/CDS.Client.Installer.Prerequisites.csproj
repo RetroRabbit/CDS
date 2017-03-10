@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E07F903D-E22D-41A0-A27D-26F07B04A63B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.Client.Installer.Prerequisites</RootNamespace>
+    <AssemblyName>CDS.Client.Installer.Prerequisites</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\CDS.Client.Desktop.Essential\CDSRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cds_icon_plain.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper.cs" />
+    <Compile Include="MessageDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDialogue.Designer.cs">
+      <DependentUpon>MessageDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrepareDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrepareDialogue.Designer.cs">
+      <DependentUpon>PrepareDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrerequisitesDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrerequisitesDialogue.Designer.cs">
+      <DependentUpon>PrerequisitesDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="SystemInfo.cs" />
+    <Compile Include="SystemInstallDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemInstallDialogue.Designer.cs">
+      <DependentUpon>SystemInstallDialogue.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="Requirements\Application\CDS Enterprise.lnk" />
+    <None Include="Requirements\Application\CDS.Client.Desktop.exe.config" />
+    <None Include="Requirements\Commands\clean.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\copy.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\enable_iis.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\run.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\zip.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Descript.ion">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\File_Id.diz">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\7z.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\ace.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\arj.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\bz2.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\cab.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\gz.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\iso.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\lzh.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\tar.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\uue.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Formats\z.fmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\Default.SFX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\rar.lng">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\rarext.lng">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\uninstall.lng">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\WinCon.SFX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\WinRAR.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\winrar.lng">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\de\Zip.SFX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\en\Default.SFX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\en\uninstall.lng">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\en\WinCon.SFX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\en\WinRAR.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\en\winrar.lng">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\Languages\en\Zip.SFX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Commands\Zip\winrar.rcf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Prerequisites\CDS.Client.Desktop.rar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Prerequisites\CDS.Web.DataService.rar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Requirements\Prerequisites\Installers\SQL\2014 Express\ConfigurationFileTemplate.ini" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\2014 LocalDB\Demo\DemoDatabase.rar" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\2014 LocalDB\x64\SqlLocalDB.msi" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\2014 LocalDB\x86\SqlLocalDB.msi" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\SQLNCLI\x64\SharedManagementObjects.msi" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\SQLNCLI\x64\SQLNCLI.MSI" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\SQLNCLI\x64\SQLSysClrTypes.msi" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\SQLNCLI\x86\SharedManagementObjects.msi" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\SQLNCLI\x86\SQLNCLI.MSI" />
+    <None Include="Requirements\Prerequisites\Installers\SQL\SQLNCLI\x86\SQLSysClrTypes.msi" />
+    <None Include="Requirements\Server\CDS.Server.Installer.exe.config" />
+    <None Include="Requirements\Server\CDS.Server.Installer.vshost.exe.Config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cds_icon_plain.ico" />
+    <Content Include="Requirements\Application\CDS.Client.BusinessLayer.dll" />
+    <Content Include="Requirements\Application\CDS.Client.DataAccessLayer.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Accounting.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Catalogue.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Company.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Core.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Document.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Essential.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.exe" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.HumanResources.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Ordering.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Reporting.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Stock.dll" />
+    <Content Include="Requirements\Application\CDS.Client.Desktop.Workshop.dll" />
+    <Content Include="Requirements\Application\CDS.Shared.Exception.dll" />
+    <Content Include="Requirements\Application\CDS.Shared.Resources.dll" />
+    <Content Include="Requirements\Application\CDSSkin.dll" />
+    <Content Include="Requirements\Application\DevExpress.BonusSkins.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Charts.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.CodeParser.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Data.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.DataAccess.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.DataAccess.v14.2.UI.dll" />
+    <Content Include="Requirements\Application\DevExpress.Images.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Map.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.Office.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.PivotGrid.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.Printing.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.RichEdit.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.Sparkline.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.SpellChecker.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.Utils.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Utils.v14.2.UI.dll" />
+    <Content Include="Requirements\Application\DevExpress.Web.ASPxThemes.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Web.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.Core.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.Docking.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.Layout.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.Printing.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.Printing.v14.2.Service.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.ReportDesigner.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpf.Ribbon.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.Xpo.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraBars.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraCharts.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraCharts.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraCharts.v14.2.UI.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraCharts.v14.2.Web.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraCharts.v14.2.Wizard.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraEditors.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraGauges.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraGrid.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraLayout.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraMap.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraNavBar.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraPivotGrid.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraPrinting.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraReports.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraReports.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraReports.v14.2.Service.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraReports.v14.2.Web.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraRichEdit.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraRichEdit.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraScheduler.v14.2.Core.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraScheduler.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraScheduler.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraSpellChecker.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraTreeList.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraVerticalGrid.v14.2.dll" />
+    <Content Include="Requirements\Application\DevExpress.XtraWizard.v14.2.dll" />
+    <Content Include="Requirements\Application\EntityFramework.dll" />
+    <Content Include="Requirements\Application\EntityFramework.SqlServer.dll" />
+    <Content Include="Requirements\Application\Ionic.Zip.dll" />
+    <Content Include="Requirements\Application\Kjs.AppLife.Update.Controller.dll" />
+    <Content Include="Requirements\Application\Kjs.AppLife.Update.Engine.Core.dll" />
+    <Content Include="Requirements\Application\LumenWorks.Framework.IO.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.Unity.dll" />
+    <Content Include="Requirements\Application\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="Requirements\Application\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="Requirements\Application\Microsoft.SqlServer.Management.Sdk.Sfc.dll" />
+    <Content Include="Requirements\Application\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="Requirements\Application\Microsoft.SqlServer.SmoExtended.dll" />
+    <Content Include="Requirements\Application\Microsoft.SqlServer.SqlEnum.dll" />
+    <Content Include="Requirements\Application\Microsoft.Win32.TaskScheduler.dll" />
+    <Content Include="Requirements\Application\Microsoft.Win32.TaskSchedulerEditor.dll" />
+    <Content Include="Requirements\Application\Newtonsoft.Json.dll" />
+    <Content Include="Requirements\Application\System.Windows.Interactivity.dll" />
+    <Content Include="Requirements\Application\TimeSpan2.dll" />
+    <Content Include="Requirements\Commands\Zip\Formats\7zxa.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Formats\UNACEV2.DLL">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\Order.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\Rar.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\TechNote.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\UnrarSrc.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\de\WhatsNew.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\Order.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\Rar.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\TechNote.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\UnrarSrc.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Languages\en\WhatsNew.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Launch WinRAR.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\Rar.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\RarExt.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\RarExt64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\RarExtLoader.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\RarFiles.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Commands\Zip\UnRAR.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Requirements\Prerequisites\Installers\.NET4.5.1\NDP451-KB2858728-x86-x64-AllOS-ENU.exe" />
+    <Content Include="Requirements\Prerequisites\Installers\SQL\2014 Express\CDSSQLTemplate.txt" />
+    <Content Include="Requirements\Prerequisites\Installers\SQL\2014 Express\x64\SQLEXPR_x64_ENU.exe" />
+    <Content Include="Requirements\Prerequisites\Installers\SQL\2014 Express\x86\SQLEXPR_x86_ENU.exe" />
+    <Content Include="Requirements\Prerequisites\Installers\Win7PS1\x64\windows6.1-KB976932-X64.exe" />
+    <Content Include="Requirements\Prerequisites\Installers\Win7PS1\x86\windows6.1-KB976932-X86.exe" />
+    <Content Include="Requirements\Server\CDS.Client.BusinessLayer.dll" />
+    <Content Include="Requirements\Server\CDS.Client.DataAccessLayer.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Accounting.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Catalogue.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Company.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Core.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Document.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Essential.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.HumanResources.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Ordering.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Reporting.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Stock.dll" />
+    <Content Include="Requirements\Server\CDS.Client.Desktop.Workshop.dll" />
+    <Content Include="Requirements\Server\CDS.Server.Installer.exe" />
+    <Content Include="Requirements\Server\CDS.Server.Installer.vshost.exe" />
+    <Content Include="Requirements\Server\CDS.Shared.Exception.dll" />
+    <Content Include="Requirements\Server\CDS.Shared.Resources.dll" />
+    <Content Include="Requirements\Server\CDSSkin.dll" />
+    <Content Include="Requirements\Server\CompleteDataLayer.dll" />
+    <Content Include="Requirements\Server\DevExpress.BonusSkins.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Charts.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.CodeParser.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Data.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.DataAccess.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.DataAccess.v14.2.UI.dll" />
+    <Content Include="Requirements\Server\DevExpress.Images.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Map.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.Office.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.PivotGrid.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.Printing.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.RichEdit.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.Sparkline.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.SpellChecker.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.Utils.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Utils.v14.2.UI.dll" />
+    <Content Include="Requirements\Server\DevExpress.Web.ASPxThemes.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Web.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.Core.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.Docking.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.Layout.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.Printing.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.Printing.v14.2.Service.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.ReportDesigner.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpf.Ribbon.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.Xpo.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraBars.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraCharts.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraCharts.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraCharts.v14.2.UI.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraCharts.v14.2.Web.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraCharts.v14.2.Wizard.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraEditors.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraGauges.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraGrid.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraLayout.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraMap.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraNavBar.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraPivotGrid.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraPrinting.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraReports.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraReports.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraReports.v14.2.Service.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraReports.v14.2.Web.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraRichEdit.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraRichEdit.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraScheduler.v14.2.Core.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraScheduler.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraScheduler.v14.2.Extensions.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraSpellChecker.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraTreeList.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraVerticalGrid.v14.2.dll" />
+    <Content Include="Requirements\Server\DevExpress.XtraWizard.v14.2.dll" />
+    <Content Include="Requirements\Server\EntityFramework.dll" />
+    <Content Include="Requirements\Server\EntityFramework.SqlServer.dll" />
+    <Content Include="Requirements\Server\Ionic.Zip.dll" />
+    <Content Include="Requirements\Server\Kjs.AppLife.Update.Controller.dll" />
+    <Content Include="Requirements\Server\Kjs.AppLife.Update.Engine.Core.dll" />
+    <Content Include="Requirements\Server\LumenWorks.Framework.IO.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.Unity.dll" />
+    <Content Include="Requirements\Server\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="Requirements\Server\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="Requirements\Server\Microsoft.SqlServer.Management.Sdk.Sfc.dll" />
+    <Content Include="Requirements\Server\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="Requirements\Server\Microsoft.SqlServer.SmoExtended.dll" />
+    <Content Include="Requirements\Server\Microsoft.SqlServer.SqlEnum.dll" />
+    <Content Include="Requirements\Server\Microsoft.Win32.TaskScheduler.dll" />
+    <Content Include="Requirements\Server\Microsoft.Win32.TaskSchedulerEditor.dll" />
+    <Content Include="Requirements\Server\Newtonsoft.Json.dll" />
+    <Content Include="Requirements\Server\SQL\Format\ITM_History.xml" />
+    <Content Include="Requirements\Server\SQL\Scripts\1. Prepare database for export.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\2. Import Ledger Accounts.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\3. Import Companies.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\4. Import Inventory.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\5. Import Tracking Numbers.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\6. Import Documents.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\7. Import Ledger.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\8. Import Misc.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\1. Prepare database for export.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\2. Import Ledger Accounts.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\3. Import Companies.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\4. Import Inventory.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\5. Import Tracking Numbers.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\6. Import Documents.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\7. Import Ledger.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\Chimera\8. Import Misc.sql" />
+    <Content Include="Requirements\Server\SQL\Scripts\New Company\1. Create Control Accounts.sql" />
+    <Content Include="Requirements\Server\SQL\Split Address.sql" />
+    <Content Include="Requirements\Server\System.Windows.Interactivity.dll" />
+    <Content Include="Requirements\Server\TimeSpan2.dll" />
+    <Content Include="Resources\cds-loader.gif" />
+    <Content Include="Resources\cdssplash.png" />
+    <Content Include="Resources\navigate_cross_32.png" />
+    <Content Include="Resources\server_128.png" />
+    <Content Include="Resources\workplace_128.png" />
+    <Content Include="Resources\workplace_demo_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MessageDialogue.resx">
+      <DependentUpon>MessageDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrepareDialogue.resx">
+      <DependentUpon>PrepareDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrerequisitesDialogue.resx">
+      <DependentUpon>PrerequisitesDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="SystemInstallDialogue.resx">
+      <DependentUpon>SystemInstallDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Requirements\Web\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(TargetDir)Requirements\" ( mkdir "$(TargetDir)Requirements\" )
+if not exist "$(TargetDir)Requirements\Application" ( mkdir "$(TargetDir)Requirements\Application" )
+if not exist "$(TargetDir)Requirements\Commands" ( mkdir "$(TargetDir)Requirements\Commands" )
+if not exist "$(TargetDir)Requirements\Prerequisites" ( mkdir "$(TargetDir)Requirements\Prerequisites" )
+if not exist "$(TargetDir)Requirements\Server" ( mkdir "$(TargetDir)Requirements\Server" )
+cmd /c del "$(ProjectDir)Requirements\Prerequisites\CDS.Client.Desktop.rar" /F /Q
+cmd /c del "$(ProjectDir)Requirements\Prerequisites\CDS.Web.DataService.rar" /F /Q
+cmd /c xcopy "$(ProjectDir)..\CDS.Shared.Resources\bin\Release\References\*.dll" "$(ProjectDir)..\CDS.Client.Desktop\bin\Release" /Y
+cmd /c del /F /Q "$(ProjectDir)Requirements\Application\*"
+cmd /c del /F /Q "$(ProjectDir)Requirements\Server\*"
+cmd /c rmdir /S /Q "$(ProjectDir)\bin\*"
+cmd /c rmdir /S /Q "$(ProjectDir)\obj\*"
+cmd /c xcopy "$(ProjectDir)..\CDS.Client.Desktop\bin\Release\*.dll" "$(ProjectDir)Requirements\Application" /Y
+cmd /c xcopy "$(ProjectDir)..\CDS.Client.Desktop\bin\Release\*.exe" "$(ProjectDir)Requirements\Application" /Y
+cmd /c xcopy "$(ProjectDir)..\CDS.Client.Desktop\bin\Release\*.config" "$(ProjectDir)Requirements\Application" /Y
+cmd /c xcopy "$(ProjectDir)..\CDS.Client.Desktop\bin\Release\Resources\CDS Enterprise.lnk" "$(ProjectDir)Requirements\Application" /Y
+cmd /c xcopy "c:\teamcity\Installers" "$(TargetDir)Requirements\Prerequisites\Installers" /Y /S /I
+cd $(SolutionDir)CDS.Web.DataService\bin &amp; $(ProjectDir)Requirements\Commands\Zip\Rar.exe a -r $(ProjectDir)Requirements\Prerequisites\CDS.Web.DataService.rar *.*
+cmd /c del /Q $(ProjectDir)Requirements\Server\ 
+cmd /c xcopy "$(ProjectDir)Requirements\Application\*.dll" "$(ProjectDir)Requirements\Server" /Y
+cmd /c xcopy "$(ProjectDir)..\CDS.Server.Installer\bin\Release\Scripts" "$(ProjectDir)Requirements\Server\Scripts" /Y /S /I
+cmd /c xcopy "$(ProjectDir)..\CDS.Server.Installer\bin\Release\CompleteDataLayer.dll" "$(ProjectDir)Requirements\Server" /Y
+cmd /c xcopy "$(ProjectDir)..\CDS.Server.Installer\bin\Release\*.exe" "$(ProjectDir)Requirements\Server" /Y
+cmd /c xcopy "$(ProjectDir)..\CDS.Server.Installer\bin\Release\*.config" "$(ProjectDir)Requirements\Server" /Y
+cmd /c del "$(ProjectDir)Requirements\Application\*.vshost*" /F /Q  
+cd $(ProjectDir)Requirements\Application &amp; $(ProjectDir)Requirements\Commands\Zip\Rar.exe a -r $(ProjectDir)Requirements\Prerequisites\CDS.Client.Desktop.rar *.*</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>cmd /c xcopy "$(ProjectDir)Requirements\Server\*.exe" "$(TargetDir)Requirements\Server" /Y
+cmd /c xcopy "$(ProjectDir)Requirements\Server\*.dll" "$(TargetDir)Requirements\Server" /Y
+cmd /c xcopy "$(ProjectDir)Requirements\Server\*.config" "$(TargetDir)Requirements\Server" /Y
+cmd /c xcopy "$(ProjectDir)Requirements\Server\SQL" "$(TargetDir)Requirements\Server\SQL" /Y /S /I
+
+cmd /c attrib -r $(TargetDir)\*.* /s
+cd $(TargetDir) &amp; $(ProjectDir)Requirements\Commands\Zip\Rar.exe a -r $(TargetDir)CDS.Client.Installer.rar *.*</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="c2aApp" ng-controller="indexViewModel">
+
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <title>C2A - Complete Cloud Acounting</title>
+    <meta name="keywords" content="Accounting Cloud" />
+    <meta name="description" content="C2A - Complete Cloud Accounting">
+    <meta name="author" content="Comeplete Distribution">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -- Local Version -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'>
+
+    <!-- JS Libraries -->
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+    <!-- Google Tag Manager -->
+    <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WQJJHQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+        (function(w,d,s,l,i)
+            {
+                w[l]=w[l]||[];
+                w[l].push(
+                    {
+                        'gtm.start': new Date().getTime(),event:'gtm.js'});
+                        var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                        j.async=true;
+                        j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+                        f.parentNode.insertBefore(j,f);
+                    }
+        )
+        (window,document,'script','dataLayer','GTM-WQJJHQ');
+    </script>-->
+    <!-- End Google Tag Manager -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+
+
+        <!-- Topbar Nav (hidden) -->
+        <div class="topbar-nav clearfix">
+            <div class="container">
+                <ul class="topbar-left list-unstyled list-inline">
+                    <li> <span class="fa fa-phone"></span> 123-456-7890 </li>
+                    <li> <span class="fa fa-envelope"></span> info@cdsonline.co.za </li>
+                </ul>
+                <ul class="topbar-right list-unstyled list-inline topbar-social">
+                    <li> <a href="#"> <span class="fa fa-facebook"></span> </a></li>
+                    <li> <a href="#"> <span class="fa fa-twitter"></span> </a></li>
+                    <li> <a href="#"> <span class="fa fa-google-plus"></span> </a></li>
+                    <li> <a href="#"> <span class="fa fa-dribbble"></span> </a></li>
+                    <li> <a href="#"> <span class="fa fa-instagram"></span> </a></li>
+                </ul>
+            </div>
+        </div> 
+
+        <div class="container" style="max-width: 1050px;">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">C2Accounting</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active hidden">
+                        <a href="#page-top">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#features-flat">Features</a>
+                    </li>
+                    <li>
+                        <!--Rename portfolio to products-->
+                        <a class="page-scroll" href="#pricing">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#footer">Contact</a>
+                    </li>
+                    <li><a href="http://accounting.cdsonline.co.za" class="btn btn-xs btn-primary">Log in</a></li>
+                    <li><a href="#download" class="btn btn-xs btn-wire hidden">Sign up</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Hero Content -->
+    <header id="hero">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in hidden">This is a lead in statement!</div>
+                <div class="intro-heading">We do the <b>accounting</b> for you so you can focus on making the money.</div>
+                <a href="#services" class="page-scroll btn btn-xl btn-primary">Learn More</a>
+                <a href="#contact" class="page-scroll btn btn-xl btn-wire">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                    <h3 class="section-subheading text-muted">What we bring to the table.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-4 mb50">
+                    <span class="fa-stack fa-4x ">
+                        <i class="fa fa-circle fa-stack-2x text-alert"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <!--<div class="service-icon"> <img src="img/icons/1-lg.png" title="service icon"> </div>-->
+                    <h4 class="service-heading">Accessible Anywhere</h4>
+                    <p class="text-muted">Because it's hosted in the cloud, you can <b>access it anywhere</b>. This means you can move your office anywhere you feel compfortable...</p>
+                </div>
+                <div class="col-sm-4 mb50">
+                    <!--<div class="service-icon"> <img src="img/icons/2-lg.png" title="service icon"> </div>-->
+                    <span class="fa-stack fa-4x ">
+                        <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                        <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Cloud infrastructure</h4>
+                    <p class="text-muted">Hosted on the best cloud infrastructure available. Making sure that we can <b>grow</b> with your business as the need arise.</p>
+                </div>
+                <div class="col-sm-4 mb50">
+                    <!--<div class="service-icon"> <img src="img/icons/3-lg.png" title="service icon"> </div>-->
+                    <span class="fa-stack fa-4x ">
+                        <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Web Security</h4>
+                    <p class="text-muted">Securely encrypted to make sure only you can see what makes your business work and grow. <b>Security you can trust.</b></p>
+                </div>
+          
+                <div class="col-sm-4 mb50">
+                    <span class="fa-stack fa-4x ">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <!--<div class="service-icon"> <img src="img/icons/4-lg.png" title="service icon"> </div>-->
+                    <h4 class="service-heading">Integrated E-Commerce</h4>
+                    <p class="text-muted">We provide you with the ability to add an E-commerce platform that is fully integrated with the accounting that you have already grown to <b>love</b>.</p>
+                </div>
+                <div class="col-sm-4 mb50">
+                    <!--<div class="service-icon"> <img src="img/icons/5-lg.png" title="service icon"> </div>-->
+                    <span class="fa-stack fa-4x ">
+                        <i class="fa fa-circle fa-stack-2x text-system"></i>
+                        <i class="fa fa-mobile fa-stack-2x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Responsive Design</h4>
+                    <p class="text-muted">Responsive designs so you can open everything on the move, no matter where you are. <b>Works perfectly</b> on devices of all types.</p>
+                </div>
+                <div class="col-sm-4 mb50">
+                    <!--<div class="service-icon"> <img src="img/icons/6-lg.png" title="service icon"> </div>-->
+                    <span class="fa-stack fa-4x ">
+                        <i class="fa fa-circle fa-stack-2x text-info"></i>
+                        <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Superior Analysis</h4>
+                    <p class="text-muted">We give you the information you need, when you need it. So you can <b>make the decisions</b> you need to, when you need to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flat Features Section -->
+    <section id="features-flat" class="bg-light">
+        <div class="container">
+             
+            <div class="row">
+                <div class="col-sm-12 col-md-6 text-center">
+                    <h2 class="section-heading mt70">Customizable dashboards </h2>
+                    <h3 class="section-subheading text-muted mb30">You know best what is most important to you.</h3>
+                    <p class="text-muted mb50">So we give you the ability to choose what you need to see and pay attention to so you can focus on that, while we take care of the rest!</p>
+	                <a href="#services" class="page-scroll btn btn-xl btn-primary pv15">Learn More</a>
+	                <a href="#contact" class="page-scroll btn btn-xl btn-danger pv15">Contact Us</a>
+
+                </div>
+                <div class="hidden-sm hidden-xs col-md-6">
+              		<img src="img/features/flat_feature1.png" title="iMac Image" class="img-responsive pull-right">
+              </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Flat Features Section -->
+    <section id="features-flat">
+        <div class="container">
+             
+            <div class="row">
+                <div class="hidden-sm hidden-xs col-md-6">
+              		<img src="img/features/flat_feature2.png" title="iMac Image" class="img-responsive pull-left">
+                </div>
+                <div class="col-sm-12 col-md-6 text-center">
+                    <h2 class="section-heading mt70">Mobile Friendly</h2>
+                    <h3 class="section-subheading text-muted mb30">Works great on your phone or tablet.</h3>
+                    <p class="text-muted mb50">It works perfectly on any device or resolution. You can use it on the go without having to boot up your laptop!</p>
+	                <a href="#services" class="page-scroll btn btn-xl btn-primary pv15">Learn More</a>
+	                <a href="#contact" class="page-scroll btn btn-xl btn-danger pv15">Contact Us</a>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">We're here to help you succeed</h2>
+                    <h3 class="section-subheading text-muted mbn">We can help you get to the things you never have time for.</h3>
+
+
+                </div>
+            </div>
+             
+            <div class="row">
+                <div class="col-lg-6">
+                </div>
+              <div class="col-md-12 hidden">
+              	<!-- <img src="img/features/1.png" title="iMac Image" class="img-responsive pull-right mtn30"> -->
+              </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Choose the plan that fit your needs</h2>
+                    <h3 class="section-subheading text-muted mbn">No credit card required. No risk, <b>Cancel anytime</b>!</h3>
+                </div>
+                <div class="col-sm-12 col-md-11 center-column mt25">
+                    
+                    <div class="pricing-table mt25">
+
+                        <div class="col-sm-4">
+                            <div class="pricing-plan">
+                            <div class="plan-header">
+                                <h2 class="mtn">Free</h2>
+                            </div>
+                            <div class="plan-pricing">
+                                <span></span>
+                                <h2>Free</h2>
+                                <h6>30 Days</h6>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                <li>
+                                    <i class="fa fa-hdd-o"></i>
+                                    <b>1GB</b> Disk Space*</li>
+                                <li>
+                                    <i class="fa fa-building"></i>
+                                    <b>1</b> Company</li>
+                                <li>
+                                    <i class="fa fa-user"></i>
+                                    <b>2</b> Free Users**</li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <b>Email</b> support</li>
+                                <li>
+                                    <i class="fa fa-users"></i>
+                                    Manage <b>customers</b>, <b>suppliers</b> and <b>items</b></li>
+                                <li>
+                                    <i class="fa fa-pie-chart"></i>
+                                    <b>Customizable</b> Dashboard</li>
+                                <li>
+                                    <i class="fa fa-credit-card"></i>
+                                    Bank and credit card processing</li>
+                                </ul>
+                            </div>
+                            <div class="plan-footer">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".sign-up-trial">Select</button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="pricing-plan">
+                            <div class="plan-header bg-light">
+                                <h2 class="mtn">Monthly</h2>
+                            </div>
+                            <div class="plan-pricing">
+                                <span>R</span>
+                                <h2>150</h2>
+                                <h6>Per Month</h6>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                <li>
+                                    <i class="fa fa-hdd-o"></i>
+                                    <b>1GB</b> Disk Space*</li>
+                                <li>
+                                    <i class="fa fa-building"></i>
+                                    <b>1</b> Company</li>
+                                <li>
+                                    <i class="fa fa-user"></i>
+                                    <b>2</b> Free Users**</li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <b>Email</b> support</li>
+                                <li>
+                                    <i class="fa fa-users"></i>
+                                    Manage <b>customers</b>, <b>suppliers</b> and <b>items</b></li>
+                                <li>
+                                    <i class="fa fa-pie-chart"></i>
+                                    <b>Customizable</b> Dashboard</li>
+                                <li>
+                                    <i class="fa fa-credit-card"></i>
+                                    Bank and credit card processing</li>
+                                </ul>
+                            </div>
+                            <div class="plan-footer">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".sign-up-monthly">Select</button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="pricing-plan">
+                            <div class="plan-header bg-light">
+                                <h2 class="mtn">Annually</h2>
+                            </div>
+                            <div class="plan-pricing">
+                                <span>R</span>
+                                <h2>1 500</h2>
+                                <h6>Per year</h6>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                <li>
+                                    <i class="fa fa-hdd-o"></i>
+                                    <b>1GB</b> Disk Space*</li>
+                                <li>
+                                    <i class="fa fa-building"></i>
+                                    <b>1</b> Company</li>
+                                <li>
+                                    <i class="fa fa-user"></i>
+                                    <b>2</b> Free Users**</li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <b>Email</b> support</li>
+                                <li>
+                                    <i class="fa fa-users"></i>
+                                    Manage <b>customers</b>, <b>suppliers</b> and <b>items</b></li>
+                                <li>
+                                    <i class="fa fa-pie-chart"></i>
+                                    <b>Customizable</b> Dashboard</li>
+                                <li>
+                                    <i class="fa fa-credit-card"></i>
+                                    Bank and credit card processing</li>
+                                </ul>
+                            </div>
+                            <div class="plan-footer">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".sign-up-annually">Select</button>
+                            </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-subheading text-muted mbn"><b>*</b> R10 per additional 1GB</h3>
+                    <h3 class="section-subheading text-muted mbn"><b>**</b> R20 each extra user</h3>
+                </div>
+            </div>            
+            
+        </div>
+    </section>
+            
+    <div class="modal fade sign-up-trial" tabindex="-1" role="dialog" aria-labelledby="signuptrial" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="signuptrial">Sign up for a <b>FREE</b> trial</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="email-form" name="email-form" data-name="Email Form" novalidate action="http://cdsonline.us5.list-manage.com/subscribe/post?u=a9e5fc8b5a4926cba484166fa&amp;id=c6be2000a2" method="post">
+                        <input class="form-control" id="COMPANY-2" type="text" placeholder="Enter your Company Name" name="COMPANY" data-name="COMPANY">
+                        <input class="form-control" id="FNAME" type="text" placeholder="Enter your First Name" name="FNAME" data-name="FNAME" required="required">
+                        <input class="form-control" id="mce-LNAME" type="text" placeholder="Enter your Last Name" name="LNAME" required="required" data-name="LNAME">
+                        <input class="form-control" id="EMAIL-3" type="email" placeholder="Enter your email address" name="EMAIL" data-name="EMAIL" required="required">
+                        <input class="btn btn-lg btn-block btn-system" type="submit" value="Submit" data-wait="Please wait...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade sign-up-monthly" tabindex="-1" role="dialog" aria-labelledby="signupmonthly" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="signupmonthly">Sign up for CDS - <b>Monthly</b></h4>
+                </div>
+                <div class="modal-body">
+                    <form id="email-form" name="email-form" data-name="Email Form" novalidate action="http://cdsonline.us5.list-manage.com/subscribe/post?u=a9e5fc8b5a4926cba484166fa&amp;id=c5b1ead603" method="post">
+                        <input class="form-control" id="COMPANY-2" type="text" placeholder="Enter your Company Name" name="COMPANY" data-name="COMPANY">
+                        <input class="form-control" id="FNAME" type="text" placeholder="Enter your First Name" name="FNAME" data-name="FNAME" required="required">
+                        <input class="form-control" id="mce-LNAME" type="text" placeholder="Enter your Last Name" name="LNAME" required="required" data-name="LNAME">
+                        <input class="form-control" id="EMAIL-3" type="email" placeholder="Enter your email address" name="EMAIL" data-name="EMAIL" required="required">
+                        <input class="btn btn-lg btn-block btn-system" type="submit" value="Submit" data-wait="Please wait...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade sign-up-annually" tabindex="-1" role="dialog" aria-labelledby="signupannually" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="signupannually">Sign up for CDS - <b>Annually</b></h4>
+                </div>
+                <div class="modal-body">
+                    <form id="email-form" name="email-form" data-name="Email Form" novalidate action="http://cdsonline.us5.list-manage.com/subscribe/post?u=a9e5fc8b5a4926cba484166fa&amp;id=94d6a99573" method="post">
+                        <input class="form-control" id="COMPANY-2" type="text" placeholder="Enter your Company Name" name="COMPANY" data-name="COMPANY">
+                        <input class="form-control" id="FNAME" type="text" placeholder="Enter your First Name" name="FNAME" data-name="FNAME" required="required">
+                        <input class="form-control" id="mce-LNAME" type="text" placeholder="Enter your Last Name" name="LNAME" required="required" data-name="LNAME">
+                        <input class="form-control" id="EMAIL-3" type="email" placeholder="Enter your email address" name="EMAIL" data-name="EMAIL" required="required">
+                        <input class="btn btn-lg btn-block btn-system" type="submit" value="Submit" data-wait="Please wait...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients Section -->
+    <section id="clients" class="bg-light">
+        <div class="container mw1000">
+            <div class="row">
+                <div class="client-logo">
+                    <a href="#">
+                        <img src="img/external/dieselelctric.png" class="img-responsive img-centered mw100" alt="">
+                    </a>
+                </div>
+                <div class="client-logo">
+                    <a href="#">
+                        <img src="img/external/GoeieHoopOnderdele.png" class="img-responsive img-centered mw100" alt="">
+                    </a>
+                </div>
+                <div class="client-logo">
+                    <a href="#">
+                        <img src="img/external/toolsandmore.png" class="img-responsive img-centered mw100" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Get your free trial and explore the possibilities!</h2>
+                </div>
+            </div>
+            <form name="sentMessage" id="contactForm" class="mw800 center-block clearfix" novalidate action="http://cdsonline.us5.list-manage.com/subscribe/post?u=a9e5fc8b5a4926cba484166fa&amp;id=c6be2000a2" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name *" id="FNAME" name="FNAME" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Your Email *" id="mce-EMAIL" name="EMAIL" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-xl btn-block btn-wire">Subscribe</button>
+                </div>
+            </form>	
+	        <p> By subscribing you agree to our terms and conditions. </p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container mw850">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                <span class="copyright text-muted">Copyright &copy; <b>Complete Distribution CC</b> 2015</span>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/cds_dist"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/CompleteDistribution"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="http://www.linkedin.com/company/complete-distribution"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 hidden">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <!-- <script src="js/vendor/jquery.js"></script> -- Local Version -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="js/vendor/bootstrap.min.js"></script> -- Local Version -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/vendor/jqBootstrapValidation.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ExcludeFromPackageFiles Include="Web.config;packages.config;www.cdsonline.co.za.wpp.targets">
+      <FromTarget>www.cdsonline.co.za.wpp.targets</FromTarget>
+    </ExcludeFromPackageFiles>
+  </ItemGroup>
+</Project>

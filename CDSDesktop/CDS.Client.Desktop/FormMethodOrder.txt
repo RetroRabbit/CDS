@@ -1,0 +1,10 @@
+﻿OnStart
+OnNewRecord
+OpenRecord
+OnSaveRecord
+OnNextRecord
+OnPreviousRecord
+ApplySecurity
+OnValidation
+Events
+Export

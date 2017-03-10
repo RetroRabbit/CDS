@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0210549E-4287-45CD-BB88-8BA7601CA4AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.Client.Desktop.Reporting</RootNamespace>
+    <AssemblyName>CDS.Client.Desktop.Reporting</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>5b206f31</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\CDS.Client.Desktop.Essential\CDSRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Charts.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Data.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.DataAccess.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.PivotGrid.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Printing.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Utils.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Xpo.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraBars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraCharts.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.UI, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraCharts.v14.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraLayout.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraPivotGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraPrinting.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraReports.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraReports.v14.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analytic\AnalyticCustomFieldDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analytic\AnalyticCustomFieldDialogue.Designer.cs">
+      <DependentUpon>AnalyticCustomFieldDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analytic\AnalyticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analytic\AnalyticForm.Designer.cs">
+      <DependentUpon>AnalyticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analytic\AnalyticList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analytic\AnalyticList.Designer.cs">
+      <DependentUpon>AnalyticList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Report\Design\ReportDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Design\ReportDesigner.Designer.cs">
+      <DependentUpon>ReportDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Design\SaveReportDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Design\SaveReportDialogue.designer.cs">
+      <DependentUpon>SaveReportDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Design\Templates\BaseReportTemplate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Design\Templates\BaseReportTemplate.Designer.cs">
+      <DependentUpon>BaseReportTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Extensions\DesignExtension.cs" />
+    <Compile Include="Report\Extensions\ReportExtension.cs" />
+    <Compile Include="Report\ReportEmailer.cs" />
+    <Compile Include="Report\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportList.Designer.cs">
+      <DependentUpon>ReportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Templates\CustomTemplateExtension.cs" />
+    <Compile Include="Report\Wizard\CustomWizard.cs" />
+    <Compile Include="Report\Wizard\ReportParameterDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\ReportParameterDialogue.Designer.cs">
+      <DependentUpon>ReportParameterDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Wizard\WizardCommandHandler.cs" />
+    <Compile Include="Report\Wizard\WizardHelper.cs" />
+    <Compile Include="Report\Wizard\WizPageChooseFieldsCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageConnectionCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageConnectionCustom.designer.cs">
+      <DependentUpon>WizPageConnectionCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageDataOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageDataOption.designer.cs">
+      <DependentUpon>WizPageDataOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageLayoutCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageLayoutCustom.Designer.cs">
+      <DependentUpon>WizPageLayoutCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageQuery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageQuery.designer.cs">
+      <DependentUpon>WizPageQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageStylesCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageTablesCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageWelcomeCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Wizard\WizPageWelcomeCustom.Designer.cs">
+      <DependentUpon>WizPageWelcomeCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRDesignRibbonControllerResources.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="Report\Templates\BaseReport.repx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Analytic\AnalyticCustomFieldDialogue.resx">
+      <DependentUpon>AnalyticCustomFieldDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analytic\AnalyticForm.resx">
+      <DependentUpon>AnalyticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analytic\AnalyticList.resx">
+      <DependentUpon>AnalyticList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Report\Design\ReportDesigner.resx">
+      <DependentUpon>ReportDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Design\SaveReportDialogue.resx">
+      <DependentUpon>SaveReportDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Design\Templates\BaseReportTemplate.resx">
+      <DependentUpon>BaseReportTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportList.resx">
+      <DependentUpon>ReportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Wizard\ReportParameterDialogue.resx">
+      <DependentUpon>ReportParameterDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Wizard\WizPageConnectionCustom.resx">
+      <DependentUpon>WizPageConnectionCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Wizard\WizPageDataOption.resx">
+      <DependentUpon>WizPageDataOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Wizard\WizPageQuery.resx">
+      <DependentUpon>WizPageQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRDesignRibbonControllerResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\earth_16.png" />
+    <Content Include="Resources\pencil_16.png" />
+    <Content Include="Resources\pencil_32.png" />
+    <Content Include="Resources\presentation_chart_16.png" />
+    <Content Include="Resources\presentation_chart_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDS.Client.BusinessLayer\CDS.Client.BusinessLayer.csproj">
+      <Project>{1db405c2-c4c6-42f8-8895-70c2e9dc37c1}</Project>
+      <Name>CDS.Client.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.DataAccessLayer\CDS.Client.DataAccessLayer.csproj">
+      <Project>{6fed544f-d28e-4351-9f48-2322abbd2ab2}</Project>
+      <Name>CDS.Client.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Essential\CDS.Client.Desktop.Essential.csproj">
+      <Project>{c2192bb4-bfc0-425f-be3f-07c398f88067}</Project>
+      <Name>CDS.Client.Desktop.Essential</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Exception\CDS.Shared.Exception.csproj">
+      <Project>{086d0531-5ad2-409b-9b49-40f93c98d4c4}</Project>
+      <Name>CDS.Shared.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Resources\CDS.Shared.Resources.csproj">
+      <Project>{32f912e6-0ae3-41e0-aff7-b9e4c99f208f}</Project>
+      <Name>CDS.Shared.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.C2A.Auth.API", "C2A.Auth.API\CDS.C2A.Auth.API.csproj", "{B65594F1-8FEB-4071-B085-256D05DD2874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.C2A.Auth.API.Tests", "C2A.Auth.API.Tests\CDS.C2A.Auth.API.Tests.csproj", "{1DDEC242-5207-4A89-8864-D10ED21EBE5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.C2A.API", "C2A.CDS.API\CDS.C2A.API.csproj", "{AE834DFB-237F-43CE-AE57-3984D6ECDDE5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FB25BB6-49C1-467B-ADB9-974E5F0369C4} = {2FB25BB6-49C1-467B-ADB9-974E5F0369C4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.C2A.API.Tests", "C2A.CDS.API.Tests\CDS.C2A.API.Tests.csproj", "{291B68C3-FBFB-4195-A76C-947E46BBF02E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www.cdsonline.co.za", "http://localhost:56195", "{7CE9D074-4FB1-4D21-B172-4CA87FB23CE9}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56195"
+		Debug.AspNetCompiler.PhysicalPath = "www.cdsonline.co.za\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56195\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56195"
+		Release.AspNetCompiler.PhysicalPath = "www.cdsonline.co.za\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56195\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "www.cdsonline.co.za\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "accounting.cdsonline.co.za", "http://localhost:54187", "{FC8DC902-8D11-4682-BA78-5CB96D2C1A9A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54187"
+		Debug.AspNetCompiler.PhysicalPath = "accounting.cdsonline.co.za\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54187\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54187"
+		Release.AspNetCompiler.PhysicalPath = "accounting.cdsonline.co.za\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54187\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "accounting.cdsonline.co.za\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.DataAccessLayer", "..\CDSCommon\CDS.DataAccessLayer\CDS.DataAccessLayer.csproj", "{8193BA88-693C-4C19-A32B-E95616910C25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.BusinessLayer", "..\CDSCommon\CDS.BusinessLayer\CDS.BusinessLayer.csproj", "{2FB25BB6-49C1-467B-ADB9-974E5F0369C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B65594F1-8FEB-4071-B085-256D05DD2874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B65594F1-8FEB-4071-B085-256D05DD2874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B65594F1-8FEB-4071-B085-256D05DD2874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B65594F1-8FEB-4071-B085-256D05DD2874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DDEC242-5207-4A89-8864-D10ED21EBE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DDEC242-5207-4A89-8864-D10ED21EBE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DDEC242-5207-4A89-8864-D10ED21EBE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DDEC242-5207-4A89-8864-D10ED21EBE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE834DFB-237F-43CE-AE57-3984D6ECDDE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE834DFB-237F-43CE-AE57-3984D6ECDDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE834DFB-237F-43CE-AE57-3984D6ECDDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE834DFB-237F-43CE-AE57-3984D6ECDDE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{291B68C3-FBFB-4195-A76C-947E46BBF02E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291B68C3-FBFB-4195-A76C-947E46BBF02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291B68C3-FBFB-4195-A76C-947E46BBF02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291B68C3-FBFB-4195-A76C-947E46BBF02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CE9D074-4FB1-4D21-B172-4CA87FB23CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE9D074-4FB1-4D21-B172-4CA87FB23CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE9D074-4FB1-4D21-B172-4CA87FB23CE9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE9D074-4FB1-4D21-B172-4CA87FB23CE9}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FC8DC902-8D11-4682-BA78-5CB96D2C1A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8DC902-8D11-4682-BA78-5CB96D2C1A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8DC902-8D11-4682-BA78-5CB96D2C1A9A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8DC902-8D11-4682-BA78-5CB96D2C1A9A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8193BA88-693C-4C19-A32B-E95616910C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8193BA88-693C-4C19-A32B-E95616910C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8193BA88-693C-4C19-A32B-E95616910C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8193BA88-693C-4C19-A32B-E95616910C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB25BB6-49C1-467B-ADB9-974E5F0369C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB25BB6-49C1-467B-ADB9-974E5F0369C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB25BB6-49C1-467B-ADB9-974E5F0369C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB25BB6-49C1-467B-ADB9-974E5F0369C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+xcopy %1\..\CDS.Client.Desktop\bin\Debug\*.* %1\Requirements\Application /Y

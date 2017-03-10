@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cfc5369e02f84edf981bf15f4313795e" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="CDSEntityModel.CAT_Catalogue" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.CAT_Category" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="CDSEntityModel.CAT_Item" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.CAT_ItemData" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.CAT_Meta" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="CDSEntityModel.CAT_MetaData" Width="1.5" PointX="7.5" PointY="6.25" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_Category_CAT_Catalogue" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_Category_CAT_Category" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_ItemData_CAT_Category" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_Meta_CAT_Category" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_MetaData_CAT_Category" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_ItemData_CAT_Item_Child" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_ItemData_CAT_Item_Parent" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_MetaData_CAT_Item" />
+        <AssociationConnector Association="CDSEntityModel.FK_CAT_MetaData_CAT_MetaProperty" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
