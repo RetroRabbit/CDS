@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb5b6c24ae3e4c479813e0bbc94f5f43" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_BOM_Document" Width="1.5" PointX="8" PointY="7.125" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_BOM_Recipe" Width="1.5" PointX="5.75" PointY="8.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_BOM_RecipeLine" Width="1.5" PointX="8" PointY="10.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_DIS_AmountType" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_DIS_Discount" Width="1.5" PointX="3" PointY="2.125" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_DIS_Type" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_Inventory" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_InventorySupplier" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_Kit" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_Movement" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_StockTake" Width="1.5" PointX="8" PointY="2.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_StockTakeItem" Width="1.5" PointX="10.25" PointY="2.125" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_StockTakeStatus" Width="1.5" PointX="5.75" PointY="3.125" />
+        <AssociationConnector Association="CDSEntityModel.FK_ITM_BOM_Document_ITM_BOM_Recipe" />
+        <AssociationConnector Association="CDSEntityModel.FK_IMT_BOM_RecipeLine_ITM_BOM_Recipe" />
+        <AssociationConnector Association="CDSEntityModel.FK_DIS_Discount_DIS_AmountType" />
+        <AssociationConnector Association="CDSEntityModel.FK_DIS_Discount_DIS_Type" />
+        <AssociationConnector Association="CDSEntityModel.FK_ITM_DIS_Discount_ITM_DIS_Discount" />
+        <AssociationConnector Association="CDSEntityModel.FK_ITM_StockTake_ITM_StockTakeStatus" />
+        <AssociationConnector Association="CDSEntityModel.FK_ITM_StockTakeItem_ITM_StockTake" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_History" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ITM_Surcharge" Width="1.5" PointX="4.75" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

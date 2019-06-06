@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="779fce92-c0fe-40c8-8705-7b84fb3216eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:22220/CDSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CDSService.xsd" MetadataType="Schema" ID="ef5eb63d-d640-4b70-a57e-94a4c360af41" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CDSService.disco" MetadataType="Disco" ID="97c06dad-8ad6-4895-82a2-482bca84a8b8" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?disco" />
+    <MetadataFile FileName="CDSService.wsdl" MetadataType="Wsdl" ID="f91803ef-551e-4247-9536-c2a7d467c03e" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?wsdl" />
+    <MetadataFile FileName="CDSService1.xsd" MetadataType="Schema" ID="13a97f77-d4bc-438d-a14c-810d5efe78a7" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CDSService2.xsd" MetadataType="Schema" ID="3125875e-cdb4-49fa-8b7b-e2c0d2983449" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CDSService3.xsd" MetadataType="Schema" ID="64687c42-f24c-4d6e-ab30-5280e576a479" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CDSService4.xsd" MetadataType="Schema" ID="57cd74c0-eabf-4e8a-ac3b-76462f1deb86" SourceId="1" SourceUrl="http://localhost:22220/CDSService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B30C73A-9468-4E49-BDF6-B3D5DBC2E56B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.Client.Desktop.Core</RootNamespace>
+    <AssemblyName>CDS.Client.Desktop.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>69678c5b</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\CDS.Client.Desktop.Essential\CDSRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Charts.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Data.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.PivotGrid.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.SpellChecker.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Utils.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Xpo.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraBars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraCharts.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.UI, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraCharts.v14.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraLayout.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraPivotGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraScheduler.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraScheduler.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Extensions, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraScheduler.v14.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraSpellChecker.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraTreeList.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abbreviation\AbbreviationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abbreviation\AbbreviationForm.Designer.cs">
+      <DependentUpon>AbbreviationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abbreviation\AbbreviationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abbreviation\AbbreviationList.Designer.cs">
+      <DependentUpon>AbbreviationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBBackup\BackupDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBBackup\BackupDialogue.Designer.cs">
+      <DependentUpon>BackupDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\AppointmentDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar\AppointmentDialogue.designer.cs">
+      <DependentUpon>AppointmentDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\AppointmentFormOutlook2007Style.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar\AppointmentFormOutlook2007Style.Designer.cs">
+      <DependentUpon>AppointmentFormOutlook2007Style.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar\CalendarForm.designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\PurchasesAppointmentDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar\PurchasesAppointmentDialogue.designer.cs">
+      <DependentUpon>PurchasesAppointmentDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\SalesAppointmentDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar\SalesAppointmentDialogue.designer.cs">
+      <DependentUpon>SalesAppointmentDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\WorkshopAppointmentDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar\WorkshopAppointmentDialogue.designer.cs">
+      <DependentUpon>WorkshopAppointmentDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Center\CenterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Center\CenterForm.designer.cs">
+      <DependentUpon>CenterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Center\CenterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Center\CenterList.designer.cs">
+      <DependentUpon>CenterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\DashboardSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DashboardSalesForm.Designer.cs">
+      <DependentUpon>DashboardSalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message\MessageList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message\MessageList.Designer.cs">
+      <DependentUpon>MessageList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Period\ClosePeriodDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Period\ClosePeriodDialogue.Designer.cs">
+      <DependentUpon>ClosePeriodDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Period\NewFinancialYearDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Period\NewFinancialYearDialogue.Designer.cs">
+      <DependentUpon>NewFinancialYearDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Period\PeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Period\PeriodForm.Designer.cs">
+      <DependentUpon>PeriodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Period\PeriodList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Period\PeriodList.Designer.cs">
+      <DependentUpon>PeriodList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Period\PostPeriodDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Period\PostPeriodDialogue.Designer.cs">
+      <DependentUpon>PostPeriodDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\PrinterDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\PrinterDialogue.Designer.cs">
+      <DependentUpon>PrinterDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\PrinterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\PrinterForm.Designer.cs">
+      <DependentUpon>PrinterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\PrinterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\PrinterList.Designer.cs">
+      <DependentUpon>PrinterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Security\ResetPasswordDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\ResetPasswordDialogue.Designer.cs">
+      <DependentUpon>ResetPasswordDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\RoleForm.Designer.cs">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\RoleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\RoleList.Designer.cs">
+      <DependentUpon>RoleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Site\SiteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Site\SiteForm.Designer.cs">
+      <DependentUpon>SiteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Site\SiteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Site\SiteList.Designer.cs">
+      <DependentUpon>SiteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surcharge\SurchargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surcharge\SurchargeForm.Designer.cs">
+      <DependentUpon>SurchargeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surcharge\SurchargeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surcharge\SurchargeList.Designer.cs">
+      <DependentUpon>SurchargeList.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Dashboard\DashboardSalesForm.resx.bak" />
+    <None Include="packages.config" />
+    <None Include="Period\ClosePeriodDialogue.resx.bak" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.SYS_Entity.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.SYS_Surcharge.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Abbreviation\AbbreviationForm.resx">
+      <DependentUpon>AbbreviationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abbreviation\AbbreviationList.resx">
+      <DependentUpon>AbbreviationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBBackup\BackupDialogue.resx">
+      <DependentUpon>BackupDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar\AppointmentDialogue.resx">
+      <DependentUpon>AppointmentDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar\AppointmentFormOutlook2007Style.resx">
+      <DependentUpon>AppointmentFormOutlook2007Style.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar\PurchasesAppointmentDialogue.resx">
+      <DependentUpon>PurchasesAppointmentDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar\SalesAppointmentDialogue.resx">
+      <DependentUpon>SalesAppointmentDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar\WorkshopAppointmentDialogue.resx">
+      <DependentUpon>WorkshopAppointmentDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Center\CenterForm.resx">
+      <DependentUpon>CenterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Center\CenterList.resx">
+      <DependentUpon>CenterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\DashboardSalesForm.resx">
+      <DependentUpon>DashboardSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\MessageList.resx">
+      <DependentUpon>MessageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Period\ClosePeriodDialogue.resx">
+      <DependentUpon>ClosePeriodDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Period\NewFinancialYearDialogue.resx">
+      <DependentUpon>NewFinancialYearDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Period\PeriodForm.resx">
+      <DependentUpon>PeriodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Period\PeriodList.resx">
+      <DependentUpon>PeriodList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Period\PostPeriodDialogue.resx">
+      <DependentUpon>PostPeriodDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrinterForm.resx">
+      <DependentUpon>PrinterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrinterList.resx">
+      <DependentUpon>PrinterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Security\ResetPasswordDialogue.resx">
+      <DependentUpon>ResetPasswordDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\RoleForm.resx">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\RoleList.resx">
+      <DependentUpon>RoleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Site\SiteForm.resx">
+      <DependentUpon>SiteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Site\SiteList.resx">
+      <DependentUpon>SiteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surcharge\SurchargeForm.resx">
+      <DependentUpon>SurchargeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surcharge\SurchargeList.resx">
+      <DependentUpon>SurchargeList.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\businessman2_16.png" />
+    <Content Include="Resources\businessman2_32.png" />
+    <Content Include="Resources\calendar_1_16.png" />
+    <Content Include="Resources\calendar_1_32.png" />
+    <Content Include="Resources\calendar_31_16.png" />
+    <Content Include="Resources\calendar_31_32.png" />
+    <Content Include="Resources\calendar_5_16.png" />
+    <Content Include="Resources\calendar_5_32.png" />
+    <Content Include="Resources\calendar_7_16.png" />
+    <Content Include="Resources\calendar_7_32.png" />
+    <Content Include="Resources\chart_area_16.png" />
+    <Content Include="Resources\chart_area_32.png" />
+    <Content Include="Resources\chart_bar_16.png" />
+    <Content Include="Resources\chart_bar_32.png" />
+    <Content Include="Resources\chart_pie_16.png" />
+    <Content Include="Resources\chart_pie_32.png" />
+    <Content Include="Resources\clock_16.png" />
+    <Content Include="Resources\clock_32.png" />
+    <Content Include="Resources\copy_16.png" />
+    <Content Include="Resources\copy_32.png" />
+    <Content Include="Resources\date_time_16.png" />
+    <Content Include="Resources\date_time_32.png" />
+    <Content Include="Resources\date_time_preferences_16.png" />
+    <Content Include="Resources\date_time_preferences_32.png" />
+    <Content Include="Resources\delete_16.png" />
+    <Content Include="Resources\delete_32.png" />
+    <Content Include="Resources\document_credit_new_16.png" />
+    <Content Include="Resources\document_order_new_16.png" />
+    <Content Include="Resources\document_quote_new_16.png" />
+    <Content Include="Resources\factory_16.png" />
+    <Content Include="Resources\factory_32.png" />
+    <Content Include="Resources\key_16.png" />
+    <Content Include="Resources\key_32.png" />
+    <Content Include="Resources\message_16.png" />
+    <Content Include="Resources\message_32.png" />
+    <Content Include="Resources\shopping_cart_16.png" />
+    <Content Include="Resources\shopping_cart_32.png" />
+    <Content Include="Resources\sun_16.png" />
+    <Content Include="Resources\sun_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDS.Client.BusinessLayer\CDS.Client.BusinessLayer.csproj">
+      <Project>{1db405c2-c4c6-42f8-8895-70c2e9dc37c1}</Project>
+      <Name>CDS.Client.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.DataAccessLayer\CDS.Client.DataAccessLayer.csproj">
+      <Project>{6fed544f-d28e-4351-9f48-2322abbd2ab2}</Project>
+      <Name>CDS.Client.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Essential\CDS.Client.Desktop.Essential.csproj">
+      <Project>{c2192bb4-bfc0-425f-be3f-07c398f88067}</Project>
+      <Name>CDS.Client.Desktop.Essential</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Exception\CDS.Shared.Exception.csproj">
+      <Project>{086d0531-5ad2-409b-9b49-40f93c98d4c4}</Project>
+      <Name>CDS.Shared.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Resources\CDS.Shared.Resources.csproj">
+      <Project>{32f912e6-0ae3-41e0-aff7-b9e4c99f208f}</Project>
+      <Name>CDS.Shared.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

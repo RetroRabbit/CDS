@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<document width="80" height="35" height-inches="6" auto-feed-paper="0" auto-cut-paper="0">
+  <data>
+    <dataset id="DOCUMENT">
+      SELECT
+      UPPER(d.[Transaction Type]) +
+      CASE WHEN (d.DateFirstPrinted IS NOT NULL)
+      THEN ' - COPY' END [TransactionType],
+      CASE WHEN (d.DateValid IS NULL) THEN ''
+      ELSE 'VALID:' + CONVERT(nvarchar(50), d.DateValid, 103) END EndDate, d.TypeId,
+      --case when d.sPaymentMethod = 'ACC' then 'ACCOUNT' when d.sPaymentMethod = 'CSH' then 'CASH'
+      --when d.sPaymentMethod = 'CRD' then 'CARD' when d.sPaymentMethod = 'EFT' then 'EFT'
+      --when d.sPaymentMethod = 'CHQ' then 'CHEQUE' ELSE '' end
+      --sPaymentMethod,
+      d.DocumentNumber,
+      d.Id SequenceNumber,
+      d.DatePosted,
+      d.TotalExcl,
+      d.Total,
+      d.TotalTax,
+      d.ReferenceLong1 AS ReferenceOurs,
+      d.ReferenceLong2 AS ReferenceYours,
+      d.ReferenceLong3 AS OrderNumber,
+      d.ReferenceLong4,
+      d.ReferenceLong5,
+      d.ReferenceShort1 AS RepCode,
+      d.ReferenceShort2 AS SalesmanCode,
+      d.ReferenceShort3,
+      d.ReferenceShort4,
+      d.ReferenceShort5,
+      d.CreatedOn,
+      d.Comment,
+      cast(d.DateLastPrinted as nvarchar(50)) DateLastPrinted, d.VatNumber,
+      d.BillingAddressLine1+ char(13) +d.BillingAddressLine2+ char(13) +d.BillingAddressLine3+ char(13) +d.BillingAddressLine4+ char(13) +d.BillingAddressCode BillingAddress,
+      d.ShippingAddressLine1+ char(13) +d.ShippingAddressLine2+ char(13) +d.ShippingAddressLine3+ char(13) +d.ShippingAddressLine4+ char(13) +d.ShippingAddressCode ShippingAddress,
+      d.ContactPerson,d.ContactTelephone
+      FROM [CDS_SYS].VW_Document d
+      WHERE d.Id = [Parameter01]
+    </dataset>
+    <dataset id="DOCUMENT_LINE">
+      SELECT
+      Quantity,
+      l.Id,
+      e.Title,
+      l.Description,
+      i.LocationMain,
+      round(((100/((1-l.DiscountPercentage)*100))* l.Amount ),2) as Amount,
+      l.TotalExcl,
+      l.Total,
+      l.TotalTax,
+      l.DiscountPercentage*100 DiscountPercentage,
+      CASE WHEN l.Total > 0 THEN (l.TotalTax/l.Total)*(100) ELSE 0 END VatPercentage
+      FROM [CDS_SYS].VW_DocumentLine l
+      INNER JOIN [CDS_SYS].VW_Entity e on l.ItemId = e.Id and l.SiteId = e.SiteId
+      LEFT JOIN [CDS_ITM].VW_Inventory i on l.ItemId = i.EntityId and l.SiteId = i.SiteId
+      WHERE HeaderId=[Parameter01]
+      ORDER BY l.LineOrder
+    </dataset>
+    <dataset id="COMPANY_DATA">
+      SELECT TOP 1
+      c.Code,
+      c.Name,
+      c.RegistrationNumber,
+      'Route: '+c.CustomValue1 CustomValue1,
+      'BTW/VAT#: '+ d.VatNumber ,
+      d.ContactPerson,
+      d.Telephone,
+      c.SalesTelephone,
+      c.AreaCode
+      FROM [CDS_SYS].VW_Document d
+      left outer join [CDS_ORG].VW_Customer c on d.CompanyId = c.Id
+      WHERE d.Id=[Parameter01]
+    </dataset>
+    <dataset id="SITE_DATA">
+      SELECT TOP 1
+      s.Name,
+      s.RegistrationNumber,
+      'BTW/VAT#: '+ s.VatNumber,
+      'TEL: '+ s.Telephone Telephone,
+      --'FAX: ' + sFax1 as sFax,
+      sa.Line1,
+      sa.Line2,
+      sa.Line3,
+      sa.Line4,
+      sa.Code PostalCode,
+      s.VatPercentage,
+      s.BankName,
+      s.BankBranch,
+      s.BankCode,
+      s.BankAccountNumber
+      FROM [CDS_SYS].VW_Site s
+      INNER JOIN [CDS_SYS].VW_Document d on s.Id = d.SiteId
+      INNER JOIN [CDS_SYS].VW_Address sa on s.ShippingAddress = sa.id
+      WHERE d.Id=[Parameter01]
+    </dataset>
+  </data>
+  <layout>
+    <!--
+                _______________________  ________________________
+                |            		   ||                       |
+                |            		   ||                       |
+                |     1      		   ||         2             |
+                |            		   ||                       |
+                _______________________  ________________________
+                _________________________________________________
+                |                                               |
+                |                       3                       |
+                _________________________________________________
+                _________________________________________________
+                |                                               |
+                |                                               |
+                |                                               |
+                |                      4                        |
+                |                                               |
+                |                                               |
+                |                                               |
+                _________________________________________________
+                _________________________________ _______________
+                |                               ||              |
+                |                               ||              |
+                |               5               ||     6        |
+                |                               ||              |
+                |                               ||              |
+                ________________________________ ________________
+  -->
+  </layout>
+  <header left="0" top="0" >
+    <format pitch="10">
+      <!-- 1 -->
+      <label left="0" top="0" width="40" format="{0}" halign="left" dataset="COMPANY_DATA">Name</label>
+      <label left="0" top="1" width="40" format="{0}" halign="left" height="3" dataset="DOCUMENT">BillingAddress</label>
+      <label left="8" top="6" width="25" format="{0}" halign="left" ></label>
+
+      <!-- 2 -->
+      <label left="41" top="0" width="38" format="{0}" halign="left" height="4" dataset="DOCUMENT">ShippingAddress</label>
+      <label left="41" top="6" width="31" format="*** {0} ***" halign="left" dataset="DOCUMENT">TransactionType</label>
+      <label left="62" top="6" width="6" format="{0}" halign="left" >PAGE :</label>
+      <label left="70" top="6" width="10" format="{0}" halign="left" dataset="DOCUMENT">[Page#]/[TotalPages#]</label>
+
+      <!-- 3 -->
+      <label left="0" top="9" width="6" format="{0}" halign="left" dataset="COMPANY_DATA">Code</label>
+      <label left="6" top="9" width="11" format="{0:dd/MM/yyyy}" halign="left" dataset="DOCUMENT">DatePosted</label>
+      <label left="18" top="9" width="12" format="{0}" halign="left" dataset="DOCUMENT">OrderNumber</label>
+      <label left="32" top="9" width="7" format="{0}" halign="left" dataset="DOCUMENT">DocumentNumber</label>
+      <label left="41" top="9" width="13" format="{0}" halign="left" dataset="DOCUMENT">ReferenceOurs</label>
+      <label left="56" top="9" width="5" format="{0}" halign="left" ></label>
+      <label left="64" top="9" width="11" format="{0}" halign="left" dataset="DOCUMENT">RepCode</label>
+
+
+    </format>
+  </header>
+
+  <body left="0" top="12" pagemax="9">
+    <item dataset="DOCUMENT_LINE" height="1">
+      <!-- 4 -->
+      <format pitch="10">
+        <label left="0" top="0" width="14" format="{0}" halign="left" dataset="DOCUMENT_LINE">Title</label>
+        <label left="15" top="0" width="19" format="{0:#}" halign="left" dataset="DOCUMENT_LINE">Description</label>
+        <label left="35" top="0" width="6" format="{0}" halign="right" dataset="DOCUMENT_LINE">LocationMain</label>
+        <label left="42" top="0" width="8" format="{0:##.##;-#.##;0}" halign="right" dataset="DOCUMENT_LINE">Quantity</label>
+        <label left="53" top="0" width="8" format="{0:#0.00}" halign="right" dataset="DOCUMENT_LINE">Amount</label>
+        <label left="63" top="0" width="4" format="{0:#0.00}" halign="right" dataset="DOCUMENT_LINE">DiscountPercentage</label>
+        <label left="70" top="0" width="9" format="{0:#0.00}" halign="right" dataset="DOCUMENT_LINE">TotalExcl</label>
+      </format>
+    </item>
+  </body>
+
+  <footer left="0" top="22">
+    <format pitch="10">
+      <!-- 5 -->
+      <label left="68" top="0" width="10" format="{0:#0.00}" halign="right" dataset="DOCUMENT">TotalExcl</label>
+      <label left="68" top="2" width="10" format="{0:#0.00}" halign="right" dataset="DOCUMENT">TotalTax</label>
+      <label left="68" top="4" width="10" format="{0:#0.00}" halign="right" dataset="DOCUMENT">Total</label>
+
+      <!-- 6 -->
+      <label left="0" top="1" width="16" format="{0}" halign="left" dataset="COMPANY_DATA">CustomValue1</label>
+      <label left="15" top="1" width="20" format="{0}" halign="left" dataset="DOCUMENT">VatNumber</label>
+      <label left="37" top="1" width="16" format="{0:hh:mm:ss}" halign="left" dataset="DOCUMENT">EndDate</label>
+      <label left="0" top="3" width="46" height="2" format="{0}" halign="left" dataset="DOCUMENT">Comment</label>
+    </format>
+  </footer>
+</document>

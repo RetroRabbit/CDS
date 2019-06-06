@@ -1,0 +1,949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D778B0A-252B-4B93-9A02-156A4FA4B3C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.Client.Desktop</RootNamespace>
+    <AssemblyName>CDS.Client.Desktop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>8f7645e6</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\CDS.Client.Desktop.Essential\CDSRuleSet.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CDS.Client.Desktop.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cds_icon_plain.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CDSSkin, Version=14.2.3.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Skin\CDSSkin\CDSSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.BonusSkins.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Data.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Images.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Printing.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.RichEdit.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Utils.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Xpo.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraBars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraLayout.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraMap.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraMap.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraNavBar.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraPrinting.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraReports.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraReports.v14.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraRichEdit.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.XtraWizard.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main\ConnectionDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\ConnectionDialogue.Designer.cs">
+      <DependentUpon>ConnectionDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\ConnectionTestAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\ConnectionTestAlert.Designer.cs">
+      <DependentUpon>ConnectionTestAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MainForm.Messenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.Properties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.RibbonMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.ShowForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainNavigationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainNavigationForm.Designer.cs">
+      <DependentUpon>MainNavigationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MapForm.Designer.cs">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\ModuleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\ModuleList.Designer.cs">
+      <DependentUpon>ModuleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\ModuleWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\ModuleWizard.Designer.cs">
+      <DependentUpon>ModuleWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\RecoveryDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\RecoveryDialogue.Designer.cs">
+      <DependentUpon>RecoveryDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\SigninForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\SigninForm.designer.cs">
+      <DependentUpon>SigninForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\SupportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\SupportForm.Designer.cs">
+      <DependentUpon>SupportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\TicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\TicketForm.Designer.cs">
+      <DependentUpon>TicketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\WaitPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\WaitPopup.Designer.cs">
+      <DependentUpon>WaitPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CDS Enterprise.lnk" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.CAL_Calendar.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.RPT_Site.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.SYS_Address.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.SYS_Entity.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.SYS_Person.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.SYS_Site.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.VW_DashboardSales.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.VW_DocumentPerDay.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.DataAccessLayer.DB.VW_Message.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.Desktop.Essential.MSG.MessengerUsers.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.Desktop.Essential.UTL.PaymentAccount.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.Desktop.Main.RecoveryDialogue+RecoveryItem.datasource" />
+    <None Include="Properties\DataSources\CDS.Client.Desktop.Site.SiteForm+NegativeDiscountEffect.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\CDS Enterprise.lnk" />
+    <None Include="Skin\CDSSkin\CDSSkin.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main\ConnectionDialogue.resx">
+      <DependentUpon>ConnectionDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\ConnectionTestAlert.resx">
+      <DependentUpon>ConnectionTestAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainNavigationForm.resx">
+      <DependentUpon>MainNavigationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MapForm.resx">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\ModuleList.resx">
+      <DependentUpon>ModuleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\ModuleWizard.resx">
+      <DependentUpon>ModuleWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\RecoveryDialogue.resx">
+      <DependentUpon>RecoveryDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\SigninForm.resx">
+      <DependentUpon>SigninForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\SupportForm.resx">
+      <DependentUpon>SupportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\TicketForm.resx">
+      <DependentUpon>TicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\WaitPopup.resx">
+      <DependentUpon>WaitPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cds_icon_plain.ico" />
+    <Content Include="FormMethodOrder.txt" />
+    <Content Include="Main\MainNav.xml" />
+    <Content Include="Resources\address_book2_16.png" />
+    <Content Include="Resources\address_book2_32.png" />
+    <Content Include="Resources\box_16.png" />
+    <Content Include="Resources\box_32.png" />
+    <Content Include="Resources\businessman2_16.png" />
+    <Content Include="Resources\businessman2_32.png" />
+    <Content Include="Resources\businessman_16.png" />
+    <Content Include="Resources\businessman_32.png" />
+    <Content Include="Resources\businessmen_24.png" />
+    <Content Include="Resources\businessmen_32.png" />
+    <Content Include="Resources\calendar_1_16.png" />
+    <Content Include="Resources\calendar_1_32.png" />
+    <Content Include="Resources\calendar_31_16.png" />
+    <Content Include="Resources\calendar_31_32.png" />
+    <Content Include="Resources\calendar_5_16.png" />
+    <Content Include="Resources\calendar_5_32.png" />
+    <Content Include="Resources\calendar_7_16.png" />
+    <Content Include="Resources\calendar_7_32.png" />
+    <Content Include="Resources\cdsicon2.ico" />
+    <Content Include="Resources\cds_banner.png" />
+    <Content Include="Resources\cds_banner_480.png" />
+    <Content Include="Resources\CDS_Logo_Stroke.png" />
+    <Content Include="Resources\chart_pie_16.png" />
+    <Content Include="Resources\chart_pie_32.png" />
+    <Content Include="Resources\checkbox_16.png" />
+    <Content Include="Resources\checkbox_32.png" />
+    <Content Include="Resources\check_16.png" />
+    <Content Include="Resources\check_32.png" />
+    <Content Include="Resources\clock_16.png" />
+    <Content Include="Resources\clock_32.png" />
+    <Content Include="Resources\components_16.png" />
+    <Content Include="Resources\components_32.png" />
+    <Content Include="Resources\component_blue_edit_16.png" />
+    <Content Include="Resources\component_blue_edit_32.png" />
+    <Content Include="Resources\copy_16.png" />
+    <Content Include="Resources\copy_32.png" />
+    <Content Include="Resources\data_blue.png" />
+    <Content Include="Resources\data_edit_16.png" />
+    <Content Include="Resources\data_edit_32.png" />
+    <Content Include="Resources\data_green.png" />
+    <Content Include="Resources\data_red.png" />
+    <Content Include="Resources\data_replace_16.png" />
+    <Content Include="Resources\data_replace_32.png" />
+    <Content Include="Resources\data_yellow.png" />
+    <Content Include="Resources\date_time_16.png" />
+    <Content Include="Resources\date_time_32.png" />
+    <Content Include="Resources\delete_16.png" />
+    <Content Include="Resources\delete_32.png" />
+    <Content Include="Resources\delivery_man_parcel_16.png" />
+    <Content Include="Resources\delivery_man_parcel_32.png" />
+    <Content Include="Resources\document_back_order_16.png" />
+    <Content Include="Resources\document_back_order_32.png" />
+    <Content Include="Resources\document_credit_16.png" />
+    <Content Include="Resources\document_credit_32.png" />
+    <Content Include="Resources\document_credit_new_16.png" />
+    <Content Include="Resources\document_credit_new_32.png" />
+    <Content Include="Resources\document_invoice_16.png" />
+    <Content Include="Resources\document_invoice_32.png" />
+    <Content Include="Resources\document_invoice_delete_16.png" />
+    <Content Include="Resources\document_invoice_delete_32.png" />
+    <Content Include="Resources\document_invoice_new_16.png" />
+    <Content Include="Resources\document_invoice_new_32.png" />
+    <Content Include="Resources\document_order_16.png" />
+    <Content Include="Resources\document_order_32.png" />
+    <Content Include="Resources\document_order_new_16.png" />
+    <Content Include="Resources\document_order_new_32.png" />
+    <Content Include="Resources\document_quote_16.png" />
+    <Content Include="Resources\document_quote_32.png" />
+    <Content Include="Resources\document_quote_new_16.png" />
+    <Content Include="Resources\document_quote_new_161.png" />
+    <Content Include="Resources\document_quote_new_32.png" />
+    <Content Include="Resources\document_quote_new_321.png" />
+    <Content Include="Resources\factory_16.png" />
+    <Content Include="Resources\factory_32.png" />
+    <None Include="Resources\gears_stop_16.png" />
+    <None Include="Resources\gears_pause_16.png" />
+    <None Include="Resources\gears_run_16.png" />
+    <Content Include="Resources\handshake_16.png" />
+    <Content Include="Resources\handshake_32.png" />
+    <Content Include="Resources\help_16.png" />
+    <Content Include="Resources\help_32.png" />
+    <Content Include="Resources\icon_plain_64.png" />
+    <Content Include="Resources\information2_16.png" />
+    <Content Include="Resources\information2_32.png" />
+    <None Include="Resources\mail_businessman_16.png" />
+    <None Include="Resources\mail_businessman_32.png" />
+    <None Include="Resources\mail_delivery_man_parcel_16.png" />
+    <None Include="Resources\mail_delivery_man_parcel_32.png" />
+    <Content Include="Resources\MainNav.xml" />
+    <Content Include="Resources\message_16.png" />
+    <Content Include="Resources\message_32.png" />
+    <Content Include="Resources\platform_truck_16.png" />
+    <Content Include="Resources\platform_truck_32.png" />
+    <Content Include="Resources\refresh_16.png" />
+    <Content Include="Resources\refresh_32.png" />
+    <Content Include="Resources\shopping_cart_16.png" />
+    <Content Include="Resources\shopping_cart_32.png" />
+    <Content Include="Resources\sun_16.png" />
+    <Content Include="Resources\sun_32.png" />
+    <Content Include="Resources\ticket_blue_16.png" />
+    <Content Include="Resources\ticket_blue_32.png" />
+    <Content Include="Resources\truck_blue_16.png" />
+    <Content Include="Resources\truck_blue_32.png" />
+    <Content Include="Resources\unchecked_16.png" />
+    <Content Include="Resources\unchecked_32.png" />
+    <None Include="Resources\update_16.gif" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\alertbaritem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\alertcaptiontop_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\alertwindow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barcustomize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barcustomizevertical.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barcustomizevertical_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barcustomize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\bardragvertical.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\bardragvertical_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\bardrag_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barvertical.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\barverticalseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\closebuttonglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\collapsebuttonglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\dockwindowbuttons.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\dockwindowbuttonshot.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\dockwindowbuttonspressed.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\dockwindowbuttonsselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\expandbuttonglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\instatusbarlinkselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\linkborderpainter.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\linkselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\mainmenucustomize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\mainmenucustomize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\mainmenudrag_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\mainmenulinkselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\minimizebuttonglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenucheck.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenucheck_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenuexpandbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenulinkselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenuseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenusidestrip.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenusidestripnonrecent.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenusplitbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\popupmenusplitbutton2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\bars\restorebuttonglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\backbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\button.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\dropdownbutton1.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\dropdownbutton2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\dropdownbutton2_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\groupexpandbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelbottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelcaptionbottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelcaptionleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelcaptionright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelcaptiontop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppanelright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\grouppaneltop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\highlighteditem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\labelline.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\labellinevert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\layoutitembackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\loadingbig.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrollbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrollbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrollshaft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrollshaftvert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrollthumbbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrollthumbbuttonvert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrolltouchthumbbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\scrolltouchthumbbuttonvert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\sizegrip.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\skinscrolltouchbackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\skinscrolltouchbackgroundvert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\splitterhorz_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\splitter_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\tooltipseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\common\tooltipwindow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\card.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dashboarddraghintglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dashboarditembackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dashboarditemcaptiontop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dashboarditempanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dashboarditemtop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\draggroup.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\draggroupoptionsbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dragitem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dragitemoptionsbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\dashboard\dragitemoptionsbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\centerdockguide.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\centerdockguidepanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\centerdockguidepanel_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\centerdockguide_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\dockwindowborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\dockwindowbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\dockwindowcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentgroupactivetabpagebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentgroupactivetabpagebutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentgroupinactivetabpagebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentgroupinactivetabpagebutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentgrouptabheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentgrouptabpane.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\documentselector.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\floatingwindowborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\floatingwindowcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\sidedockguide.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\sidedockguide_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\tabheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\tabheaderhidebar.png" />
+    <Content Include="Skin\CDSSkin\cds blue\docking\tabheaderline.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\calendarnavigationbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\checkbox.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\clearbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\clockface.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\closebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\closebutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\combobutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\combobutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\editorbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\navigator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\navigatorbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\progressborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\progressbordervert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\progresschunk.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\progresschunkvert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\progressflowindicator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\progressflowindicatorvert.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\radiobutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangecontrolleftthumb.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangecontrolleftthumb_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangecontrolrightthumb.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangecontrolrightthumb_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangecontrolrulerheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangecontrolsizingglyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangetrackbarleftthumb.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangetrackbarrightthumb.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\rangetrackbarthumbboth.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\ratingindicator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\searchbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\searchbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\sliderleftarrow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\sliderrightarrow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spindown.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spindown_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spinleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spinleft_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spinright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spinright_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spinup.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\spinup_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\toggleswitch.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\toggleswitchthumb.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\tokeneditclosebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\trackbarthumb.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\trackbarthumbboth.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\trackbartrack.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\zoomtrackbarmiddleline.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\zoomtrackbarzoominbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\editors\zoomtrackbarzoomoutbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonclose.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonclose_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonfullscreen.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonfullscreen_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonhelp.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonhelp_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmaximize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmaximize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmdiclose.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmdiclose_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmdiminimize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmdiminimize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmdirestore.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonmdirestore_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonminimize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonminimize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonrestore.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formbuttonrestore_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formcaptionminimized.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formdecoratorframebottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formdecoratorframeleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formdecoratorframeright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formdecoratorframetop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formframebottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formframeleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formframeright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\formmdibar.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonclose.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonclose_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonhelp.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonhelp_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonmaximize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonmaximize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonminimize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonminimize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonrestore.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformbuttonrestore_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\form\smallformcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\card.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\cardcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\cardcaptionhideselection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\cardcaptionselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\cardclosebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\cardopenbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\cardselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\fieldheaderbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\filterbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\filterButtonActive.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\gridgrouppanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\header.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\headerleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\headerright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\headerSpecial.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\indicator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\indicatorimages.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcard.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardborderhideselection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardborderselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardcaptionhideselection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardcaptionselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardexpandbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardhideselection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardnoborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardnoborderhideselection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardnoborderselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\layoutviewcardselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\PlusMinus.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\plusminusex.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\smartfilterbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\sortShape.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\winexplorerviewgroupclosebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\winexplorerviewgroupheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\winexplorerviewgroupopenbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\grid\winexplorerviewitem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\map\callout.png" />
+    <Content Include="Skin\CDSSkin\cds blue\map\customelement.png" />
+    <Content Include="Skin\CDSSkin\cds blue\map\pushpin.png" />
+    <Content Include="Skin\CDSSkin\cds blue\metroui\pagegroupitemheaderbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\groupclosebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\groupclosebutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\groupheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\groupopenbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\groupopenbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\scrolldownbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\scrolldownbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\scrollupbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navbar\scrollupbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\caption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\collapsebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\collapsebutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\collapsedgroupclient.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\collapsedgroupclientwithborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\expandbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\expandbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\groupbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\groupbuttonselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\item.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\itemselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\navpaneformborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\navpaneformleftsizegrip.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\navpaneformsizegrip.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\officenavigationbar.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\officenavigationbaritem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\officenavigationbarskinningitem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\overflowpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\overflowpanelexpanditem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\overflowpanelexpanditem_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\overflowpanelitem.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\scrolldownbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\scrollupbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\splitter.png" />
+    <Content Include="Skin\CDSSkin\cds blue\navpane\splitter_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\pdfviewer\searchpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\printing\pageborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\printing\previewbackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\contrastcheckbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\cornerpanel_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\pageborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\popupformbackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\popupformcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\rulerrightmargin.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\rulersection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\rulerselection.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\rulershadow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\sliderselected_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\reports\slider_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\applicationbutton2010.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\applicationbuttoncontainercontrol.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\applicationtabheaderpage.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\appmenubackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\appmenubackgroundbottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\appmenubackgroundtop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\appmenupane.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\backstageviewbackbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\backstageviewcontrolbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\backstageviewcontrolleftpane.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\backstageviewcontroltab.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\backstageviewseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\button.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\buttonarrow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\buttongroupbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\buttongroupsplitbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\buttongroupsplitbutton2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabcategory.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabcategory2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabcategoryseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabheaderpage.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabheaderpagemask.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabpanel2014.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\contexttabpanelborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formapplicationbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonclose.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonclose_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonfullscreen.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonfullscreen_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonhelp.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonhelp_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonmaximize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonmaximize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonminimize.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonminimize_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonrestore.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formbuttonrestore_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formcaptionminimized.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formcaptionnoribbon.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframebottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframebottomwithoutstatusbar.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframeleft.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframeleftnoribbon.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframelefttop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframeright.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframerightnoribbon.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\formframerighttop.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttondown.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttondown_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttondropdown.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttondropdowntouch.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttondropdowntouch_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttondropdown_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttonup.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerybuttonup_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\gallerypane.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\keytipwindow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\largebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\largesplitbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\largesplitbutton2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\leftscrollbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\macstylegallerybuttondropdown.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\navigationheaderarrowback.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\pageseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\popupgallerybutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\popupgalleryfilterpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\popupgallerygroupcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\popupgallerymenuseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\popupgallerysizergrips.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\popupgallerysizerpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\quicktoolbarabovebackground2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\quicktoolbarbelowbackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\quicktoolbarbuttonglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\quicktoolbardropdown.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\quicktoolbarglyph_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\rightscrollbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\separator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\splitbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\splitbutton2.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\statusbarbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\statusbarformbackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\statusbarseparator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabheaderbackground.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabheaderbackground2010.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabheaderpage.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanel2014.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanelgroupbody.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanelgroupbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanelgroupbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanelgroupcaption.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanelgroupminimized.png" />
+    <Content Include="Skin\CDSSkin\cds blue\ribbon\tabpanelgroupminimizedglyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\commentborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\commentmorebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\commentsarea.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\cornerpanel.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\rulercolumnresizer.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\rulerindent.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\rulerindentbottom.png" />
+    <Content Include="Skin\CDSSkin\cds blue\richedit\rulertab.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\alldayarea.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\alldayareaselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointment.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentbottomshadow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentcontent.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentleftborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentnoleftborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentnorightborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentrightborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentrightshadow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentsamedaycontent.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentsamedayleftborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentsamedayrightborder.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentstatusleftmask.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\appointmentstatustopmask.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\currenttimeindicator.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\dependency.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\dependencycorner.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\header.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\headeralternate.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\headeralternateselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\headerresource.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\headerresourcevertical.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\headerselected.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\headervertical.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\morebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\navbuttonnext.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\navbuttonnextarrow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\navbuttonprev.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\navbuttonprevarrow.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\ruler.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\rulerheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\rulerhourline.png" />
+    <Content Include="Skin\CDSSkin\cds blue\scheduler\rulerminline.png" />
+    <Content Include="Skin\CDSSkin\cds blue\skin.xml" />
+    <Content Include="Skin\CDSSkin\cds blue\spreadsheet\addnewworksheetbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\spreadsheet\coloredtabheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\spreadsheet\tabheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\tab\tabheader.png" />
+    <Content Include="Skin\CDSSkin\cds blue\tab\tabheaderbutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\tab\tabheaderbutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\tab\tabpagebutton.png" />
+    <Content Include="Skin\CDSSkin\cds blue\tab\tabpagebutton_glyph.png" />
+    <Content Include="Skin\CDSSkin\cds blue\tab\tabpane.png" />
+    <Content Include="Skin\CDSSkin\cds blue\vgrid\categorybutton.png" />
+    <Content Include="Skin\CDSSkin\CDSSkin.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDS.Client.BusinessLayer\CDS.Client.BusinessLayer.csproj">
+      <Project>{1db405c2-c4c6-42f8-8895-70c2e9dc37c1}</Project>
+      <Name>CDS.Client.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.DataAccessLayer\CDS.Client.DataAccessLayer.csproj">
+      <Project>{6fed544f-d28e-4351-9f48-2322abbd2ab2}</Project>
+      <Name>CDS.Client.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Accounting\CDS.Client.Desktop.Accounting.csproj">
+      <Project>{c7aebf63-025e-4f7e-84d5-50b812bfdd1b}</Project>
+      <Name>CDS.Client.Desktop.Accounting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Catalogue\CDS.Client.Desktop.Catalogue.csproj">
+      <Project>{3dd41114-d78c-47d3-a72c-2a5030b1d74b}</Project>
+      <Name>CDS.Client.Desktop.Catalogue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Company\CDS.Client.Desktop.Company.csproj">
+      <Project>{caff197e-81f9-4d4d-9727-9dbd58ec150d}</Project>
+      <Name>CDS.Client.Desktop.Company</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Core\CDS.Client.Desktop.Core.csproj">
+      <Project>{4b30c73a-9468-4e49-bdf6-b3d5dbc2e56b}</Project>
+      <Name>CDS.Client.Desktop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Document\CDS.Client.Desktop.Document.csproj">
+      <Project>{87ae9409-8c52-4f9a-a09b-cf6c412e0d1e}</Project>
+      <Name>CDS.Client.Desktop.Document</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Essential\CDS.Client.Desktop.Essential.csproj">
+      <Project>{c2192bb4-bfc0-425f-be3f-07c398f88067}</Project>
+      <Name>CDS.Client.Desktop.Essential</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.HumanResources\CDS.Client.Desktop.HumanResources.csproj">
+      <Project>{9f33b52b-3106-4b0b-923a-9a98f2005771}</Project>
+      <Name>CDS.Client.Desktop.HumanResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Ordering\CDS.Client.Desktop.Ordering.csproj">
+      <Project>{02343b93-7b32-4ec6-acda-aa9fc600a2a6}</Project>
+      <Name>CDS.Client.Desktop.Ordering</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Reporting\CDS.Client.Desktop.Reporting.csproj">
+      <Project>{0210549e-4287-45cd-bb88-8ba7601ca4ac}</Project>
+      <Name>CDS.Client.Desktop.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Stock\CDS.Client.Desktop.Stock.csproj">
+      <Project>{6dd8d1c0-04b8-4dad-a75e-549976eba678}</Project>
+      <Name>CDS.Client.Desktop.Stock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Client.Desktop.Workshop\CDS.Client.Desktop.Workshop.csproj">
+      <Project>{1d5672d4-4dcb-40ee-9fa9-5c4463e8acd8}</Project>
+      <Name>CDS.Client.Desktop.Workshop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Exception\CDS.Shared.Exception.csproj">
+      <Project>{086d0531-5ad2-409b-9b49-40f93c98d4c4}</Project>
+      <Name>CDS.Shared.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDS.Shared.Resources\CDS.Shared.Resources.csproj">
+      <Project>{32f912e6-0ae3-41e0-aff7-b9e4c99f208f}</Project>
+      <Name>CDS.Shared.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Skin\CDSSkin\cds blue\chart\" />
+    <Folder Include="Skin\CDSSkin\cds blue\gauges\" />
+    <Folder Include="Skin\CDSSkin\cds blue\sparkline\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

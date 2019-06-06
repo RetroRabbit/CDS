@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1aac7cc75d5047dcaae1d821e1838d76" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Abbreviation" Width="1.5" PointX="3" PointY="41.5" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Address" Width="1.5" PointX="6" PointY="24.5" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_DOC_Header" Width="1.5" PointX="3" PointY="24.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_DOC_Line" Width="1.5" PointX="8.25" PointY="27" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_DOC_Type" Width="1.5" PointX="0.75" PointY="30.375" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Entity" Width="1.5" PointX="6" PointY="19.125" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Layout" Width="1.5" PointX="3" PointY="44.375" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Log" Width="1.5" PointX="3" PointY="47.5" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Module" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_MSG_Message" Width="1.5" PointX="3" PointY="37.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Period" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Person" Width="1.5" PointX="0.75" PointY="23.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Printer" Width="1.5" PointX="3" PointY="33.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Status" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Type" Width="1.5" PointX="3.75" PointY="20.375" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Version" Width="1.5" PointX="3" PointY="15.875" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Abbreviation_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Address_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Address_SYS_Type" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Header_SYS_DOC_Type" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Header_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Line_SYS_DOC_Header" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Line_SYS_Entity_Item" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Line_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Entity_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Entity_SYS_Type" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Layout_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Log_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_MSG_Message_SYS_Person_From" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_MSG_Message_SYS_Person_To" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Period_SYS_Status" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Person_CreatedBy" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Printer_SYS_Person" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Version_SYS_Person" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Tracking" Width="1.5" PointX="0.75" PointY="20.875" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Header_SYS_Tracking" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Surcharge" Width="1.5" PointX="8.25" PointY="22.625" />
+        <AssociationConnector Association="CDSEntityModel.FK_CDS_SYS_SYS_Surcharge_AccountId_6CEB7B8E" />
+        <AssociationConnector Association="CDSEntityModel.FK_CDS_SYS_SYS_Surcharge_EntityId_B4F43CE2" />
+        <AssociationConnector Association="CDSEntityModel.FK_CDS_SYS_SYS_Surcharge_CreatedBy_7FAD6663" />
+        <EntityTypeShape EntityType="CDSEntityModel.SYS_Site" Width="1.5" PointX="11.25" PointY="20.625" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Site_SYS_Address_BillingAddress" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Site_SYS_Address_ShippingAddress" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Site_SYS_Entity" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Site_SYS_Printer_Barcode" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Site_SYS_Printer_Picker" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_Site_SYS_Printer_Receipt" />
+        <AssociationConnector Association="CDSEntityModel.FK_SYS_DOC_Header_SYS_Site" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

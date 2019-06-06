@@ -1,0 +1,1131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDSEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ORG_Company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="bigint" Nullable="false" />
+          <Property Name="EntityId" Type="bigint" Nullable="false" />
+          <Property Name="TypeId" Type="tinyint" Nullable="false" />
+          <Property Name="PaymentTermId" Type="tinyint" Nullable="false" />
+          <Property Name="CostCategoryId" Type="tinyint" Nullable="false" />
+          <Property Name="AccountId" Type="bigint" />
+          <Property Name="Prefix" Type="nvarchar" MaxLength="50" />
+          <Property Name="OpenItem" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="OverrideAccount" Type="bit" Nullable="false" />
+          <Property Name="AccountLimit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DiscountCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="TagCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AreaCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="RepCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="SalesmanCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="StatementPreference" Type="nvarchar" MaxLength="20" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomValue1" Type="nchar" MaxLength="50" />
+          <Property Name="CustomValue2" Type="nchar" MaxLength="50" />
+          <Property Name="CustomValue3" Type="nchar" MaxLength="50" />
+          <Property Name="CustomValue4" Type="nchar" MaxLength="50" />
+          <Property Name="CustomValue5" Type="nchar" MaxLength="50" />
+          <Property Name="CustomValue6" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ORG_CompanyAddress">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="bigint" />
+          <Property Name="AddressId" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ORG_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="bigint" />
+          <Property Name="PersonId" Type="bigint" Nullable="false" />
+          <Property Name="DepartmentId" Type="tinyint" />
+          <Property Name="Telephone1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="IsDefault" Type="bit" />
+        </EntityType>
+        <EntityType Name="ORG_CostCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ORG_Distribution">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityId" Type="bigint" />
+          <Property Name="DistributionTypeId" Type="smallint" />
+          <Property Name="DistributionNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Path" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventoryViewLevel" Type="int" />
+          <Property Name="TeccomHeader" Type="nvarchar" MaxLength="200" />
+          <Property Name="CustomerCode" Type="varchar" MaxLength="200" />
+          <Property Name="SupplierCode" Type="varchar" MaxLength="200" />
+          <Property Name="ViewCost" Type="bit" />
+          <Property Name="Url" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_DistributionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_Entity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityId" Type="bigint" Nullable="false" />
+          <Property Name="RegistrationNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="VatNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="4000" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ORG_History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeriodId" Type="bigint" Nullable="false" />
+          <Property Name="CompanyId" Type="bigint" Nullable="false" />
+          <Property Name="Amount" Type="money" />
+        </EntityType>
+        <EntityType Name="ORG_PaymentTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_StatementPreference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_TRX_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeaderId" Type="bigint" Nullable="false" />
+          <Property Name="ShippingTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="CompanyId" Type="bigint" Nullable="false" />
+          <Property Name="DatePosted" Type="datetime" />
+          <Property Name="DateFirstPrinted" Type="datetime" />
+          <Property Name="DateLastPrinted" Type="datetime" />
+          <Property Name="FirstPrintedBy" Type="bigint" />
+          <Property Name="LastPrintedBy" Type="bigint" />
+          <Property Name="DateValid" Type="datetime" />
+          <Property Name="ReferenceShort1" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort2" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort3" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort4" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort5" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceLong1" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong3" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong4" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong5" Type="nvarchar" MaxLength="100" />
+          <Property Name="Rounding" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactTelephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="VatNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddressLine1" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShippingAddressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShippingAddressLine3" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShippingAddressLine4" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShippingAddressCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="BillingAddressLine1" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingAddressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingAddressLine3" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingAddressLine4" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingAddressCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="TotalCash" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalCredit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAccount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ORG_TRX_LostSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="bigint" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="ORG_TRX_ShippingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ORG_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ORG_Company_ORG_CostCategory">
+          <End Role="ORG_CostCategory" Type="Self.ORG_CostCategory" Multiplicity="1" />
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_CostCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="CostCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Company_ORG_Entity">
+          <End Role="ORG_Entity" Type="Self.ORG_Entity" Multiplicity="1" />
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Entity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Company_ORG_SalesTerm">
+          <End Role="ORG_PaymentTerm" Type="Self.ORG_PaymentTerm" Multiplicity="1" />
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_PaymentTerm">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="PaymentTermId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Company_ORG_Type">
+          <End Role="ORG_Type" Type="Self.ORG_Type" Multiplicity="1" />
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_CompanyAddress_ORG_Company">
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="0..1" />
+          <End Role="ORG_CompanyAddress" Type="Self.ORG_CompanyAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_CompanyAddress">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Contact_ORG_Department">
+          <End Role="ORG_Department" Type="Self.ORG_Department" Multiplicity="0..1" />
+          <End Role="ORG_Contact" Type="Self.ORG_Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Contact">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Distribution_ORG_Company">
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="0..1" />
+          <End Role="ORG_Distribution" Type="Self.ORG_Distribution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Distribution">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Distribution_ORG_DistributionType">
+          <End Role="ORG_DistributionType" Type="Self.ORG_DistributionType" Multiplicity="0..1" />
+          <End Role="ORG_Distribution" Type="Self.ORG_Distribution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_DistributionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Distribution">
+              <PropertyRef Name="DistributionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_History_ORG_Company">
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="1" />
+          <End Role="ORG_History" Type="Self.ORG_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_History">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_TRX_Header_SYS_Entity_Company">
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="1" />
+          <End Role="ORG_TRX_Header" Type="Self.ORG_TRX_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_TRX_Header">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_TRX_LostSale_ORG_Company">
+          <End Role="ORG_Company" Type="Self.ORG_Company" Multiplicity="0..1" />
+          <End Role="ORG_TRX_LostSale" Type="Self.ORG_TRX_LostSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_TRX_LostSale">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRX_Header_TRX_ShippingType">
+          <End Role="ORG_TRX_ShippingType" Type="Self.ORG_TRX_ShippingType" Multiplicity="1" />
+          <End Role="ORG_TRX_Header" Type="Self.ORG_TRX_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_TRX_ShippingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_TRX_Header">
+              <PropertyRef Name="ShippingTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CDSEntityModelStoreContainer">
+          <EntitySet Name="ORG_Company" EntityType="Self.ORG_Company" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_CompanyAddress" EntityType="Self.ORG_CompanyAddress" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_Contact" EntityType="Self.ORG_Contact" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_CostCategory" EntityType="Self.ORG_CostCategory" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_Department" EntityType="Self.ORG_Department" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_Distribution" EntityType="Self.ORG_Distribution" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_DistributionType" EntityType="Self.ORG_DistributionType" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_Entity" EntityType="Self.ORG_Entity" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_History" EntityType="Self.ORG_History" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_PaymentTerm" EntityType="Self.ORG_PaymentTerm" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_StatementPreference" EntityType="Self.ORG_StatementPreference" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_TRX_Header" EntityType="Self.ORG_TRX_Header" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_TRX_LostSale" EntityType="Self.ORG_TRX_LostSale" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_TRX_ShippingType" EntityType="Self.ORG_TRX_ShippingType" Schema="CDS_ORG" store:Type="Tables" />
+          <EntitySet Name="ORG_Type" EntityType="Self.ORG_Type" Schema="CDS_ORG" store:Type="Tables" />
+          <AssociationSet Name="FK_ORG_Company_ORG_CostCategory" Association="Self.FK_ORG_Company_ORG_CostCategory">
+            <End Role="ORG_CostCategory" EntitySet="ORG_CostCategory" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Company_ORG_Entity" Association="Self.FK_ORG_Company_ORG_Entity">
+            <End Role="ORG_Entity" EntitySet="ORG_Entity" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Company_ORG_SalesTerm" Association="Self.FK_ORG_Company_ORG_SalesTerm">
+            <End Role="ORG_PaymentTerm" EntitySet="ORG_PaymentTerm" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Company_ORG_Type" Association="Self.FK_ORG_Company_ORG_Type">
+            <End Role="ORG_Type" EntitySet="ORG_Type" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_CompanyAddress_ORG_Company" Association="Self.FK_ORG_CompanyAddress_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_CompanyAddress" EntitySet="ORG_CompanyAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Contact_ORG_Department" Association="Self.FK_ORG_Contact_ORG_Department">
+            <End Role="ORG_Department" EntitySet="ORG_Department" />
+            <End Role="ORG_Contact" EntitySet="ORG_Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Distribution_ORG_Company" Association="Self.FK_ORG_Distribution_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_Distribution" EntitySet="ORG_Distribution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Distribution_ORG_DistributionType" Association="Self.FK_ORG_Distribution_ORG_DistributionType">
+            <End Role="ORG_DistributionType" EntitySet="ORG_DistributionType" />
+            <End Role="ORG_Distribution" EntitySet="ORG_Distribution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_History_ORG_Company" Association="Self.FK_ORG_History_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_History" EntitySet="ORG_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_TRX_Header_SYS_Entity_Company" Association="Self.FK_ORG_TRX_Header_SYS_Entity_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_TRX_Header" EntitySet="ORG_TRX_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_TRX_LostSale_ORG_Company" Association="Self.FK_ORG_TRX_LostSale_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_TRX_LostSale" EntitySet="ORG_TRX_LostSale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRX_Header_TRX_ShippingType" Association="Self.FK_TRX_Header_TRX_ShippingType">
+            <End Role="ORG_TRX_ShippingType" EntitySet="ORG_TRX_ShippingType" />
+            <End Role="ORG_TRX_Header" EntitySet="ORG_TRX_Header" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDSEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OrganisationEntityTables" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ORG_Company" EntityType="CDSEntityModel.ORG_Company" />
+          <EntitySet Name="ORG_CompanyAddress" EntityType="CDSEntityModel.ORG_CompanyAddress" />
+          <EntitySet Name="ORG_CostCategory" EntityType="CDSEntityModel.ORG_CostCategory" />
+          <EntitySet Name="ORG_Department" EntityType="CDSEntityModel.ORG_Department" />
+          <EntitySet Name="ORG_Distribution" EntityType="CDSEntityModel.ORG_Distribution" />
+          <EntitySet Name="ORG_DistributionType" EntityType="CDSEntityModel.ORG_DistributionType" />
+          <EntitySet Name="ORG_Entity" EntityType="CDSEntityModel.ORG_Entity" />
+          <EntitySet Name="ORG_History" EntityType="CDSEntityModel.ORG_History" />
+          <EntitySet Name="ORG_PaymentTerm" EntityType="CDSEntityModel.ORG_PaymentTerm" />
+          <EntitySet Name="ORG_StatementPreference" EntityType="CDSEntityModel.ORG_StatementPreference" />
+          <EntitySet Name="ORG_TRX_Header" EntityType="CDSEntityModel.ORG_TRX_Header" />
+          <EntitySet Name="ORG_TRX_LostSale" EntityType="CDSEntityModel.ORG_TRX_LostSale" />
+          <EntitySet Name="ORG_TRX_ShippingType" EntityType="CDSEntityModel.ORG_TRX_ShippingType" />
+          <EntitySet Name="ORG_Type" EntityType="CDSEntityModel.ORG_Type" />
+          <AssociationSet Name="FK_ORG_Company_ORG_CostCategory" Association="CDSEntityModel.FK_ORG_Company_ORG_CostCategory">
+            <End Role="ORG_CostCategory" EntitySet="ORG_CostCategory" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Company_ORG_Entity" Association="CDSEntityModel.FK_ORG_Company_ORG_Entity">
+            <End Role="ORG_Entity" EntitySet="ORG_Entity" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Company_ORG_SalesTerm" Association="CDSEntityModel.FK_ORG_Company_ORG_SalesTerm">
+            <End Role="ORG_PaymentTerm" EntitySet="ORG_PaymentTerm" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Company_ORG_Type" Association="CDSEntityModel.FK_ORG_Company_ORG_Type">
+            <End Role="ORG_Type" EntitySet="ORG_Type" />
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_CompanyAddress_ORG_Company" Association="CDSEntityModel.FK_ORG_CompanyAddress_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_CompanyAddress" EntitySet="ORG_CompanyAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Distribution_ORG_Company" Association="CDSEntityModel.FK_ORG_Distribution_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_Distribution" EntitySet="ORG_Distribution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_History_ORG_Company" Association="CDSEntityModel.FK_ORG_History_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_History" EntitySet="ORG_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_TRX_Header_SYS_Entity_Company" Association="CDSEntityModel.FK_ORG_TRX_Header_SYS_Entity_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_TRX_Header" EntitySet="ORG_TRX_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_TRX_LostSale_ORG_Company" Association="CDSEntityModel.FK_ORG_TRX_LostSale_ORG_Company">
+            <End Role="ORG_Company" EntitySet="ORG_Company" />
+            <End Role="ORG_TRX_LostSale" EntitySet="ORG_TRX_LostSale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORG_Distribution_ORG_DistributionType" Association="CDSEntityModel.FK_ORG_Distribution_ORG_DistributionType">
+            <End Role="ORG_DistributionType" EntitySet="ORG_DistributionType" />
+            <End Role="ORG_Distribution" EntitySet="ORG_Distribution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRX_Header_TRX_ShippingType" Association="CDSEntityModel.FK_TRX_Header_TRX_ShippingType">
+            <End Role="ORG_TRX_ShippingType" EntitySet="ORG_TRX_ShippingType" />
+            <End Role="ORG_TRX_Header" EntitySet="ORG_TRX_Header" />
+          </AssociationSet>
+          <EntitySet Name="ORG_Contact" EntityType="CDSEntityModel.ORG_Contact" />
+          <AssociationSet Name="FK_ORG_Contact_ORG_Department" Association="CDSEntityModel.FK_ORG_Contact_ORG_Department">
+            <End Role="ORG_Department" EntitySet="ORG_Department" />
+            <End Role="ORG_Contact" EntitySet="ORG_Contact" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ORG_Company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityId" Type="Int64" Nullable="false" />
+          <Property Name="TypeId" Type="Byte" Nullable="false" />
+          <Property Name="PaymentTermId" Type="Byte" Nullable="false" />
+          <Property Name="CostCategoryId" Type="Byte" Nullable="false" />
+          <Property Name="AccountId" Type="Int64" />
+          <Property Name="Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenItem" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="OverrideAccount" Type="Boolean" Nullable="false" />
+          <Property Name="AccountLimit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DiscountCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TagCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AreaCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RepCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SalesmanCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="StatementPreference" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomValue1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CustomValue2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CustomValue3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CustomValue4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CustomValue5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CustomValue6" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="ORG_CostCategory" Relationship="CDSEntityModel.FK_ORG_Company_ORG_CostCategory" FromRole="ORG_Company" ToRole="ORG_CostCategory" />
+          <NavigationProperty Name="ORG_Entity" Relationship="CDSEntityModel.FK_ORG_Company_ORG_Entity" FromRole="ORG_Company" ToRole="ORG_Entity" />
+          <NavigationProperty Name="ORG_PaymentTerm" Relationship="CDSEntityModel.FK_ORG_Company_ORG_SalesTerm" FromRole="ORG_Company" ToRole="ORG_PaymentTerm" />
+          <NavigationProperty Name="ORG_Type" Relationship="CDSEntityModel.FK_ORG_Company_ORG_Type" FromRole="ORG_Company" ToRole="ORG_Type" />
+          <NavigationProperty Name="ORG_CompanyAddress" Relationship="CDSEntityModel.FK_ORG_CompanyAddress_ORG_Company" FromRole="ORG_Company" ToRole="ORG_CompanyAddress" />
+          <NavigationProperty Name="ORG_Distribution" Relationship="CDSEntityModel.FK_ORG_Distribution_ORG_Company" FromRole="ORG_Company" ToRole="ORG_Distribution" />
+          <NavigationProperty Name="ORG_History" Relationship="CDSEntityModel.FK_ORG_History_ORG_Company" FromRole="ORG_Company" ToRole="ORG_History" />
+          <NavigationProperty Name="ORG_TRX_Header" Relationship="CDSEntityModel.FK_ORG_TRX_Header_SYS_Entity_Company" FromRole="ORG_Company" ToRole="ORG_TRX_Header" />
+          <NavigationProperty Name="ORG_TRX_LostSale" Relationship="CDSEntityModel.FK_ORG_TRX_LostSale_ORG_Company" FromRole="ORG_Company" ToRole="ORG_TRX_LostSale" />
+          <Property Name="SiteId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_CompanyAddress">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int64" />
+          <Property Name="AddressId" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_CompanyAddress_ORG_Company" FromRole="ORG_CompanyAddress" ToRole="ORG_Company" />
+        </EntityType>
+        <EntityType Name="ORG_CostCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_Company_ORG_CostCategory" FromRole="ORG_CostCategory" ToRole="ORG_Company" />
+        </EntityType>
+        <EntityType Name="ORG_Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ORG_Contact" Relationship="CDSEntityModel.FK_ORG_Contact_ORG_Department" FromRole="ORG_Department" ToRole="ORG_Contact" />
+        </EntityType>
+        <EntityType Name="ORG_Distribution">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityId" Type="Int64" />
+          <Property Name="DistributionTypeId" Type="Int16" />
+          <Property Name="DistributionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Path" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryViewLevel" Type="Int32" />
+          <Property Name="TeccomHeader" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ViewCost" Type="Boolean" />
+          <Property Name="Url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_Distribution_ORG_Company" FromRole="ORG_Distribution" ToRole="ORG_Company" />
+          <NavigationProperty Name="ORG_DistributionType" Relationship="CDSEntityModel.FK_ORG_Distribution_ORG_DistributionType" FromRole="ORG_Distribution" ToRole="ORG_DistributionType" />
+        </EntityType>
+        <EntityType Name="ORG_DistributionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ORG_Distribution" Relationship="CDSEntityModel.FK_ORG_Distribution_ORG_DistributionType" FromRole="ORG_DistributionType" ToRole="ORG_Distribution" />
+        </EntityType>
+        <EntityType Name="ORG_Entity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityId" Type="Int64" Nullable="false" />
+          <Property Name="RegistrationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_Company_ORG_Entity" FromRole="ORG_Entity" ToRole="ORG_Company" />
+        </EntityType>
+        <EntityType Name="ORG_History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeriodId" Type="Int64" Nullable="false" />
+          <Property Name="CompanyId" Type="Int64" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_History_ORG_Company" FromRole="ORG_History" ToRole="ORG_Company" />
+        </EntityType>
+        <EntityType Name="ORG_PaymentTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_Company_ORG_SalesTerm" FromRole="ORG_PaymentTerm" ToRole="ORG_Company" />
+        </EntityType>
+        <EntityType Name="ORG_StatementPreference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORG_TRX_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeaderId" Type="Int64" Nullable="false" />
+          <Property Name="ShippingTypeId" Type="Byte" Nullable="false" />
+          <Property Name="CompanyId" Type="Int64" Nullable="false" />
+          <Property Name="DatePosted" Type="DateTime" Precision="3" />
+          <Property Name="DateFirstPrinted" Type="DateTime" Precision="3" />
+          <Property Name="DateLastPrinted" Type="DateTime" Precision="3" />
+          <Property Name="FirstPrintedBy" Type="Int64" />
+          <Property Name="LastPrintedBy" Type="Int64" />
+          <Property Name="DateValid" Type="DateTime" Precision="3" />
+          <Property Name="ReferenceShort1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Rounding" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCash" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalCredit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAccount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_TRX_Header_SYS_Entity_Company" FromRole="ORG_TRX_Header" ToRole="ORG_Company" />
+          <NavigationProperty Name="ORG_TRX_ShippingType" Relationship="CDSEntityModel.FK_TRX_Header_TRX_ShippingType" FromRole="ORG_TRX_Header" ToRole="ORG_TRX_ShippingType" />
+        </EntityType>
+        <EntityType Name="ORG_TRX_LostSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int64" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_TRX_LostSale_ORG_Company" FromRole="ORG_TRX_LostSale" ToRole="ORG_Company" />
+        </EntityType>
+        <EntityType Name="ORG_TRX_ShippingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ORG_TRX_Header" Relationship="CDSEntityModel.FK_TRX_Header_TRX_ShippingType" FromRole="ORG_TRX_ShippingType" ToRole="ORG_TRX_Header" />
+        </EntityType>
+        <EntityType Name="ORG_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ORG_Company" Relationship="CDSEntityModel.FK_ORG_Company_ORG_Type" FromRole="ORG_Type" ToRole="ORG_Company" />
+        </EntityType>
+        <Association Name="FK_ORG_Company_ORG_CostCategory">
+          <End Type="CDSEntityModel.ORG_CostCategory" Role="ORG_CostCategory" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_CostCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="CostCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Company_ORG_Entity">
+          <End Type="CDSEntityModel.ORG_Entity" Role="ORG_Entity" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Entity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Company_ORG_SalesTerm">
+          <End Type="CDSEntityModel.ORG_PaymentTerm" Role="ORG_PaymentTerm" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_PaymentTerm">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="PaymentTermId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Company_ORG_Type">
+          <End Type="CDSEntityModel.ORG_Type" Role="ORG_Type" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Company">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_CompanyAddress_ORG_Company">
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="0..1" />
+          <End Type="CDSEntityModel.ORG_CompanyAddress" Role="ORG_CompanyAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_CompanyAddress">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Distribution_ORG_Company">
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="0..1" />
+          <End Type="CDSEntityModel.ORG_Distribution" Role="ORG_Distribution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Distribution">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_History_ORG_Company">
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_History" Role="ORG_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_History">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_TRX_Header_SYS_Entity_Company">
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_TRX_Header" Role="ORG_TRX_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_TRX_Header">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_TRX_LostSale_ORG_Company">
+          <End Type="CDSEntityModel.ORG_Company" Role="ORG_Company" Multiplicity="0..1" />
+          <End Type="CDSEntityModel.ORG_TRX_LostSale" Role="ORG_TRX_LostSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_TRX_LostSale">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORG_Distribution_ORG_DistributionType">
+          <End Type="CDSEntityModel.ORG_DistributionType" Role="ORG_DistributionType" Multiplicity="0..1" />
+          <End Type="CDSEntityModel.ORG_Distribution" Role="ORG_Distribution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_DistributionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Distribution">
+              <PropertyRef Name="DistributionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRX_Header_TRX_ShippingType">
+          <End Type="CDSEntityModel.ORG_TRX_ShippingType" Role="ORG_TRX_ShippingType" Multiplicity="1" />
+          <End Type="CDSEntityModel.ORG_TRX_Header" Role="ORG_TRX_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_TRX_ShippingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_TRX_Header">
+              <PropertyRef Name="ShippingTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ORG_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int64" />
+          <Property Name="PersonId" Type="Int64" Nullable="false" />
+          <Property Name="DepartmentId" Type="Byte" />
+          <Property Name="Telephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <NavigationProperty Name="ORG_Department" Relationship="CDSEntityModel.FK_ORG_Contact_ORG_Department" FromRole="ORG_Contact" ToRole="ORG_Department" />
+        </EntityType>
+        <Association Name="FK_ORG_Contact_ORG_Department">
+          <End Type="CDSEntityModel.ORG_Department" Role="ORG_Department" Multiplicity="0..1" />
+          <End Type="CDSEntityModel.ORG_Contact" Role="ORG_Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORG_Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ORG_Contact">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDSEntityModelStoreContainer" CdmEntityContainer="OrganisationEntityTables">
+          <EntitySetMapping Name="ORG_Company">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_Company">
+              <MappingFragment StoreEntitySet="ORG_Company">
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CustomValue6" ColumnName="CustomValue6" />
+                <ScalarProperty Name="CustomValue5" ColumnName="CustomValue5" />
+                <ScalarProperty Name="CustomValue4" ColumnName="CustomValue4" />
+                <ScalarProperty Name="CustomValue3" ColumnName="CustomValue3" />
+                <ScalarProperty Name="CustomValue2" ColumnName="CustomValue2" />
+                <ScalarProperty Name="CustomValue1" ColumnName="CustomValue1" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="StatementPreference" ColumnName="StatementPreference" />
+                <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+                <ScalarProperty Name="RepCode" ColumnName="RepCode" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="TagCode" ColumnName="TagCode" />
+                <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+                <ScalarProperty Name="AccountLimit" ColumnName="AccountLimit" />
+                <ScalarProperty Name="OverrideAccount" ColumnName="OverrideAccount" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="OpenItem" ColumnName="OpenItem" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="CostCategoryId" ColumnName="CostCategoryId" />
+                <ScalarProperty Name="PaymentTermId" ColumnName="PaymentTermId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_CompanyAddress">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_CompanyAddress">
+              <MappingFragment StoreEntitySet="ORG_CompanyAddress">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_CostCategory">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_CostCategory">
+              <MappingFragment StoreEntitySet="ORG_CostCategory">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_Department">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_Department">
+              <MappingFragment StoreEntitySet="ORG_Department">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_Distribution">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_Distribution">
+              <MappingFragment StoreEntitySet="ORG_Distribution">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ViewCost" ColumnName="ViewCost" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="TeccomHeader" ColumnName="TeccomHeader" />
+                <ScalarProperty Name="InventoryViewLevel" ColumnName="InventoryViewLevel" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="DistributionNumber" ColumnName="DistributionNumber" />
+                <ScalarProperty Name="DistributionTypeId" ColumnName="DistributionTypeId" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_DistributionType">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_DistributionType">
+              <MappingFragment StoreEntitySet="ORG_DistributionType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_Entity">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_Entity">
+              <MappingFragment StoreEntitySet="ORG_Entity">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="VatNumber" ColumnName="VatNumber" />
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_History">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_History">
+              <MappingFragment StoreEntitySet="ORG_History">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="PeriodId" ColumnName="PeriodId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_PaymentTerm">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_PaymentTerm">
+              <MappingFragment StoreEntitySet="ORG_PaymentTerm">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_StatementPreference">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_StatementPreference">
+              <MappingFragment StoreEntitySet="ORG_StatementPreference">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_TRX_Header">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_TRX_Header">
+              <MappingFragment StoreEntitySet="ORG_TRX_Header">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="TotalAccount" ColumnName="TotalAccount" />
+                <ScalarProperty Name="TotalCredit" ColumnName="TotalCredit" />
+                <ScalarProperty Name="TotalCash" ColumnName="TotalCash" />
+                <ScalarProperty Name="BillingAddressCode" ColumnName="BillingAddressCode" />
+                <ScalarProperty Name="BillingAddressLine4" ColumnName="BillingAddressLine4" />
+                <ScalarProperty Name="BillingAddressLine3" ColumnName="BillingAddressLine3" />
+                <ScalarProperty Name="BillingAddressLine2" ColumnName="BillingAddressLine2" />
+                <ScalarProperty Name="BillingAddressLine1" ColumnName="BillingAddressLine1" />
+                <ScalarProperty Name="ShippingAddressCode" ColumnName="ShippingAddressCode" />
+                <ScalarProperty Name="ShippingAddressLine4" ColumnName="ShippingAddressLine4" />
+                <ScalarProperty Name="ShippingAddressLine3" ColumnName="ShippingAddressLine3" />
+                <ScalarProperty Name="ShippingAddressLine2" ColumnName="ShippingAddressLine2" />
+                <ScalarProperty Name="ShippingAddressLine1" ColumnName="ShippingAddressLine1" />
+                <ScalarProperty Name="VatNumber" ColumnName="VatNumber" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="ContactTelephone" ColumnName="ContactTelephone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Rounding" ColumnName="Rounding" />
+                <ScalarProperty Name="ReferenceLong5" ColumnName="ReferenceLong5" />
+                <ScalarProperty Name="ReferenceLong4" ColumnName="ReferenceLong4" />
+                <ScalarProperty Name="ReferenceLong3" ColumnName="ReferenceLong3" />
+                <ScalarProperty Name="ReferenceLong2" ColumnName="ReferenceLong2" />
+                <ScalarProperty Name="ReferenceLong1" ColumnName="ReferenceLong1" />
+                <ScalarProperty Name="ReferenceShort5" ColumnName="ReferenceShort5" />
+                <ScalarProperty Name="ReferenceShort4" ColumnName="ReferenceShort4" />
+                <ScalarProperty Name="ReferenceShort3" ColumnName="ReferenceShort3" />
+                <ScalarProperty Name="ReferenceShort2" ColumnName="ReferenceShort2" />
+                <ScalarProperty Name="ReferenceShort1" ColumnName="ReferenceShort1" />
+                <ScalarProperty Name="DateValid" ColumnName="DateValid" />
+                <ScalarProperty Name="LastPrintedBy" ColumnName="LastPrintedBy" />
+                <ScalarProperty Name="FirstPrintedBy" ColumnName="FirstPrintedBy" />
+                <ScalarProperty Name="DateLastPrinted" ColumnName="DateLastPrinted" />
+                <ScalarProperty Name="DateFirstPrinted" ColumnName="DateFirstPrinted" />
+                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="ShippingTypeId" ColumnName="ShippingTypeId" />
+                <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_TRX_LostSale">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_TRX_LostSale">
+              <MappingFragment StoreEntitySet="ORG_TRX_LostSale">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_TRX_ShippingType">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_TRX_ShippingType">
+              <MappingFragment StoreEntitySet="ORG_TRX_ShippingType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_Type">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_Type">
+              <MappingFragment StoreEntitySet="ORG_Type">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_Contact">
+            <EntityTypeMapping TypeName="CDSEntityModel.ORG_Contact">
+              <MappingFragment StoreEntitySet="ORG_Contact">
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+                <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

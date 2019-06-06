@@ -1,0 +1,1641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FED544F-D28E-4351-9F48-2322ABBD2AB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.Client.DataAccessLayer</RootNamespace>
+    <AssemblyName>CDS.Client.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\CDS.Client.Desktop.Essential\CDSRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Data.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CDS.Shared.Resources\References\DevExpress.Xpo.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\SYS_Abbreviation.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Address.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_DOC_Header.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_DOC_Line.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_DOC_Type.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Entity.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Layout.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Log.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Module.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_MSG_Message.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Period.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Person.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Printer.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Site.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Status.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Surcharge.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Tracking.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Type.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SYS_Version.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_LineItem.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Types\Statement.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\AOR_Order.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\AOR_Order.Designer.cs">
+      <DependentUpon>AOR_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\AOR_OrderLine.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\AOR_OrderLine.Designer.cs">
+      <DependentUpon>AOR_OrderLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAL_Attachment.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAL_Attachment.Designer.cs">
+      <DependentUpon>CAL_Attachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAL_Calendar.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAL_Calendar.Designer.cs">
+      <DependentUpon>CAL_Calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Catalogue.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Catalogue.Designer.cs">
+      <DependentUpon>CAT_Catalogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Category.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Category.Designer.cs">
+      <DependentUpon>CAT_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Item.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Item.Designer.cs">
+      <DependentUpon>CAT_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAT_ItemData.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAT_ItemData.Designer.cs">
+      <DependentUpon>CAT_ItemData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Meta.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAT_Meta.Designer.cs">
+      <DependentUpon>CAT_Meta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CAT_MetaData.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CAT_MetaData.Designer.cs">
+      <DependentUpon>CAT_MetaData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_AOR_AOR_Order.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_AOR_AOR_Order.Designer.cs">
+      <DependentUpon>CDS_AOR_AOR_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_AOR_AOR_OrderLine.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_AOR_AOR_OrderLine.Designer.cs">
+      <DependentUpon>CDS_AOR_AOR_OrderLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAL_CAL_Attachment.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAL_CAL_Attachment.Designer.cs">
+      <DependentUpon>CDS_CAL_CAL_Attachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAL_CAL_Calendar.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAL_CAL_Calendar.Designer.cs">
+      <DependentUpon>CDS_CAL_CAL_Calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Catalogue.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Catalogue.Designer.cs">
+      <DependentUpon>CDS_CAT_CAT_Catalogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Category.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Category.Designer.cs">
+      <DependentUpon>CDS_CAT_CAT_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Item.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Item.Designer.cs">
+      <DependentUpon>CDS_CAT_CAT_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_ItemData.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_ItemData.Designer.cs">
+      <DependentUpon>CDS_CAT_CAT_ItemData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Meta.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_Meta.Designer.cs">
+      <DependentUpon>CDS_CAT_CAT_Meta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_MetaData.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_CAT_CAT_MetaData.Designer.cs">
+      <DependentUpon>CDS_CAT_CAT_MetaData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Account.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Account.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Aging.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Aging.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Aging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Budget.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Budget.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Budget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_BulkEntryRule.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_BulkEntryRule.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_BulkEntryRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Header.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_History.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_History.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_JournalType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_JournalType.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_JournalType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Line.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Line.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Recon.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Recon.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Recon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_SiteAccount.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_SiteAccount.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_SiteAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Statement.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Statement.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Statement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_SystemAccountType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_SystemAccountType.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_SystemAccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Tax.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Tax.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Tax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_GLX_GLX_Type.Designer.cs">
+      <DependentUpon>CDS_GLX_GLX_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_HRS_HRS_Employee.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_HRS_HRS_Employee.Designer.cs">
+      <DependentUpon>CDS_HRS_HRS_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_HRS_HRS_Role.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_HRS_HRS_Role.Designer.cs">
+      <DependentUpon>CDS_HRS_HRS_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_IBO_IBO_TRX_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_IBO_IBO_TRX_Header.Designer.cs">
+      <DependentUpon>CDS_IBO_IBO_TRX_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_BOM_Document.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_BOM_Document.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_BOM_Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_BOM_Recipe.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_BOM_Recipe.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_BOM_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_BOM_RecipeLine.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_BOM_RecipeLine.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_BOM_RecipeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_DIS_AmountType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_DIS_AmountType.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_DIS_AmountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_DIS_Discount.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_DIS_Discount.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_DIS_Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_DIS_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_DIS_Type.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_DIS_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_History.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_History.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Inventory.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Inventory.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_InventorySupplier.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_InventorySupplier.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_InventorySupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Kit.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Kit.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_Kit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Movement.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Movement.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_Movement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_StockTake.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_StockTake.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_StockTake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_StockTakeItem.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_StockTakeItem.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_StockTakeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_StockTakeStatus.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_StockTakeStatus.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_StockTakeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Surcharge.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ITM_ITM_Surcharge.Designer.cs">
+      <DependentUpon>CDS_ITM_ITM_Surcharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_JOB_JOB_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_JOB_JOB_Header.Designer.cs">
+      <DependentUpon>CDS_JOB_JOB_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Company.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Company.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_CompanyAddress.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_CompanyAddress.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_CompanyAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Contact.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Contact.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_CostCategory.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_CostCategory.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_CostCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Department.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Department.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Distribution.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Distribution.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_Distribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_DistributionType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_DistributionType.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_DistributionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Entity.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Entity.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_History.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_History.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_PaymentTerm.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_PaymentTerm.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_PaymentTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_StatementPreference.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_StatementPreference.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_StatementPreference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_TRX_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_TRX_Header.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_TRX_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_TRX_LostSale.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_TRX_LostSale.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_TRX_LostSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_TRX_ShippingType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_TRX_ShippingType.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_TRX_ShippingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_ORG_ORG_Type.Designer.cs">
+      <DependentUpon>CDS_ORG_ORG_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_RPT_RPT_Analytic.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_RPT_RPT_Analytic.Designer.cs">
+      <DependentUpon>CDS_RPT_RPT_Analytic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_RPT_RPT_Report.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_RPT_RPT_Report.Designer.cs">
+      <DependentUpon>CDS_RPT_RPT_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_Access.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_Access.Designer.cs">
+      <DependentUpon>CDS_SEC_SEC_Access.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_Role.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_Role.Designer.cs">
+      <DependentUpon>CDS_SEC_SEC_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_RoleAccess.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_RoleAccess.Designer.cs">
+      <DependentUpon>CDS_SEC_SEC_RoleAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_User.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_User.Designer.cs">
+      <DependentUpon>CDS_SEC_SEC_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_UserRole.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SEC_SEC_UserRole.Designer.cs">
+      <DependentUpon>CDS_SEC_SEC_UserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Abbreviation.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Abbreviation.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Abbreviation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Address.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Address.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_DOC_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_DOC_Header.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_DOC_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_DOC_Line.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_DOC_Line.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_DOC_Line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_DOC_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_DOC_Type.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_DOC_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Entity.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Entity.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Layout.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Layout.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Layout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Log.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Log.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Module.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Module.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_MSG_Message.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_MSG_Message.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_MSG_Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Notification.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Notification.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Period.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Period.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Period.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Person.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Person.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Printer.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Printer.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Site.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Site.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Site.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Status.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Status.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Surcharge.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Surcharge.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Surcharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Tracking.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Tracking.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Tracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Type.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Version.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\CDS_SYS_SYS_Version.Designer.cs">
+      <DependentUpon>CDS_SYS_SYS_Version.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ConnectionHelper.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Account.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Account.Designer.cs">
+      <DependentUpon>GLX_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Aging.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Aging.Designer.cs">
+      <DependentUpon>GLX_Aging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Budget.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Budget.Designer.cs">
+      <DependentUpon>GLX_Budget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_BulkEntryRule.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_BulkEntryRule.Designer.cs">
+      <DependentUpon>GLX_BulkEntryRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Header.Designer.cs">
+      <DependentUpon>GLX_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_History.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_History.Designer.cs">
+      <DependentUpon>GLX_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_JournalType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_JournalType.Designer.cs">
+      <DependentUpon>GLX_JournalType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Line.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Line.Designer.cs">
+      <DependentUpon>GLX_Line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Recon.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Recon.Designer.cs">
+      <DependentUpon>GLX_Recon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_SiteAccount.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_SiteAccount.Designer.cs">
+      <DependentUpon>GLX_SiteAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Statement.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Statement.Designer.cs">
+      <DependentUpon>GLX_Statement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_SystemAccountType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_SystemAccountType.Designer.cs">
+      <DependentUpon>GLX_SystemAccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Tax.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Tax.Designer.cs">
+      <DependentUpon>GLX_Tax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\GLX_Type.Designer.cs">
+      <DependentUpon>GLX_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\HRS_Employee.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\HRS_Employee.Designer.cs">
+      <DependentUpon>HRS_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\HRS_Role.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\HRS_Role.Designer.cs">
+      <DependentUpon>HRS_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\IBO_TRX_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\IBO_TRX_Header.Designer.cs">
+      <DependentUpon>IBO_TRX_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_BOM_Document.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_BOM_Document.Designer.cs">
+      <DependentUpon>ITM_BOM_Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_BOM_Recipe.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_BOM_Recipe.Designer.cs">
+      <DependentUpon>ITM_BOM_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_BOM_RecipeLine.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_BOM_RecipeLine.Designer.cs">
+      <DependentUpon>ITM_BOM_RecipeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_DIS_AmountType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_DIS_AmountType.Designer.cs">
+      <DependentUpon>ITM_DIS_AmountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_DIS_Discount.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_DIS_Discount.Designer.cs">
+      <DependentUpon>ITM_DIS_Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_DIS_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_DIS_Type.Designer.cs">
+      <DependentUpon>ITM_DIS_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_History.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_History.Designer.cs">
+      <DependentUpon>ITM_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Inventory.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Inventory.Designer.cs">
+      <DependentUpon>ITM_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_InventorySupplier.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_InventorySupplier.Designer.cs">
+      <DependentUpon>ITM_InventorySupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Kit.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Kit.Designer.cs">
+      <DependentUpon>ITM_Kit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Movement.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Movement.Designer.cs">
+      <DependentUpon>ITM_Movement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_StockTake.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_StockTake.Designer.cs">
+      <DependentUpon>ITM_StockTake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_StockTakeItem.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_StockTakeItem.Designer.cs">
+      <DependentUpon>ITM_StockTakeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_StockTakeStatus.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_StockTakeStatus.Designer.cs">
+      <DependentUpon>ITM_StockTakeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Surcharge.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ITM_Surcharge.Designer.cs">
+      <DependentUpon>ITM_Surcharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\JOB_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\JOB_Header.Designer.cs">
+      <DependentUpon>JOB_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Company.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Company.Designer.cs">
+      <DependentUpon>ORG_Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_CompanyAddress.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_CompanyAddress.Designer.cs">
+      <DependentUpon>ORG_CompanyAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Contact.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Contact.Designer.cs">
+      <DependentUpon>ORG_Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_CostCategory.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_CostCategory.Designer.cs">
+      <DependentUpon>ORG_CostCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Department.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Department.Designer.cs">
+      <DependentUpon>ORG_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Distribution.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Distribution.Designer.cs">
+      <DependentUpon>ORG_Distribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_DistributionType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_DistributionType.Designer.cs">
+      <DependentUpon>ORG_DistributionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Entity.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Entity.Designer.cs">
+      <DependentUpon>ORG_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_History.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_History.Designer.cs">
+      <DependentUpon>ORG_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_PaymentTerm.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_PaymentTerm.Designer.cs">
+      <DependentUpon>ORG_PaymentTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_TRX_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_TRX_Header.Designer.cs">
+      <DependentUpon>ORG_TRX_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_TRX_LostSale.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_TRX_LostSale.Designer.cs">
+      <DependentUpon>ORG_TRX_LostSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_TRX_ShippingType.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_TRX_ShippingType.Designer.cs">
+      <DependentUpon>ORG_TRX_ShippingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\ORG_Type.Designer.cs">
+      <DependentUpon>ORG_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\RPT_Analytic.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\RPT_Analytic.Designer.cs">
+      <DependentUpon>RPT_Analytic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\RPT_Report.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\RPT_Report.Designer.cs">
+      <DependentUpon>RPT_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SEC_Access.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SEC_Access.Designer.cs">
+      <DependentUpon>SEC_Access.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SEC_Role.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SEC_Role.Designer.cs">
+      <DependentUpon>SEC_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SEC_RoleAccess.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SEC_RoleAccess.Designer.cs">
+      <DependentUpon>SEC_RoleAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SEC_User.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SEC_User.Designer.cs">
+      <DependentUpon>SEC_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SEC_UserRole.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SEC_UserRole.Designer.cs">
+      <DependentUpon>SEC_UserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Abbreviation.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Abbreviation.Designer.cs">
+      <DependentUpon>SYS_Abbreviation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Address.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Address.Designer.cs">
+      <DependentUpon>SYS_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_DOC_Header.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_DOC_Header.Designer.cs">
+      <DependentUpon>SYS_DOC_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_DOC_Line.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_DOC_Line.Designer.cs">
+      <DependentUpon>SYS_DOC_Line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_DOC_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_DOC_Type.Designer.cs">
+      <DependentUpon>SYS_DOC_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Entity.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Entity.Designer.cs">
+      <DependentUpon>SYS_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Layout.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Layout.Designer.cs">
+      <DependentUpon>SYS_Layout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_MSG_Message.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_MSG_Message.Designer.cs">
+      <DependentUpon>SYS_MSG_Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Notification.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Notification.Designer.cs">
+      <DependentUpon>SYS_Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Period.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Period.Designer.cs">
+      <DependentUpon>SYS_Period.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Person.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Person.Designer.cs">
+      <DependentUpon>SYS_Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Printer.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Printer.Designer.cs">
+      <DependentUpon>SYS_Printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Site.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Site.Designer.cs">
+      <DependentUpon>SYS_Site.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Status.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Status.Designer.cs">
+      <DependentUpon>SYS_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Surcharge.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Surcharge.Designer.cs">
+      <DependentUpon>SYS_Surcharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Tracking.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Tracking.Designer.cs">
+      <DependentUpon>SYS_Tracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Type.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\SYS_Type.Designer.cs">
+      <DependentUpon>SYS_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XDB\CDSXDBModelCode\VW_LineItem.cs" />
+    <Compile Include="XDB\CDSXDBModelCode\VW_LineItem.Designer.cs">
+      <DependentUpon>VW_LineItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AccountingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AccountingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AccountingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AOR_Order.cs">
+      <DependentUpon>OrderingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AOR_OrderLine.cs">
+      <DependentUpon>OrderingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BalancePivot.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BuyoutModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuyoutModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BuyoutModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuyoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BuyoutModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuyoutModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CalendarModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CalendarModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CalendarModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAL_Attachment.cs">
+      <DependentUpon>CalendarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAL_Calendar.cs">
+      <DependentUpon>CalendarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CatalogueModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogueModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CatalogueModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CatalogueModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogueModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAT_Catalogue.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAT_Category.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAT_Item.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAT_ItemData.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAT_Meta.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CAT_MetaData.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CDSDBModelReadOnly.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDSDBModelReadOnly.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CDSDBModelReadOnly.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CDSDBModelReadOnly.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDSDBModelReadOnly.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Extender.cs" />
+    <Compile Include="DB\GLX_Account.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Aging.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Budget.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_BulkEntryRule.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Header.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_History.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_JournalType.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Line.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Recon.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_SiteAccount.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_SystemAccountType.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Tax.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\GLX_Type.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HRS_Employee.cs">
+      <DependentUpon>HumanResourcesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HRS_Role.cs">
+      <DependentUpon>HumanResourcesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HumanResourcesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HumanResourcesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HumanResourcesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HumanResourcesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HumanResourcesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\IBO_TRX_Header.cs">
+      <DependentUpon>BuyoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\InventoryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\InventoryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\InventoryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_BOM_Document.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_BOM_Recipe.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_BOM_RecipeLine.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_DIS_AmountType.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_DIS_Discount.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_DIS_Type.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_History.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_Inventory.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_InventorySupplier.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_Kit.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_Movement.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_StockTake.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_StockTakeItem.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_StockTakeStatus.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ITM_Surcharge.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\JOB_Header.cs">
+      <DependentUpon>WorkshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OrderingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OrderingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OrderingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OrganisationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganisationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OrganisationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OrganisationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganisationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_Company.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_CompanyAddress.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_Contact.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_CostCategory.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_Department.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_Distribution.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_DistributionType.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_Entity.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_History.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_PaymentTerm.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_StatementPreference.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_TRX_Header.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_TRX_LostSale.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_TRX_ShippingType.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ORG_Type.cs">
+      <DependentUpon>OrganisationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ReportModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ReportModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ReportModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\RPT_Analytic.cs">
+      <DependentUpon>ReportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\RPT_Report.cs">
+      <DependentUpon>ReportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SecurityModel.Context.cs">
+      <DependentUpon>SecurityModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DB\SecurityModel.cs">
+      <DependentUpon>SecurityModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DB\SecurityModel.Designer.cs">
+      <DependentUpon>SecurityModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DB\SEC_Access.cs">
+      <DependentUpon>SecurityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SEC_Role.cs">
+      <DependentUpon>SecurityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SEC_RoleAccess.cs">
+      <DependentUpon>SecurityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SEC_User.cs">
+      <DependentUpon>SecurityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SEC_UserRole.cs">
+      <DependentUpon>SecurityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SystemModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SystemModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SystemModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Account.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Address.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Alternative.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Analytic.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_AnalyticSource.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Attachment.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_AutomaticOrder.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Balance.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_BOMDocument.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_BOMRecipe.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Budget.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_CalendarWeb.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Catalogue.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Category.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Center.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Company.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_CompanyHistory.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Contact.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Customer.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_DashboardSales.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Discount.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Document.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_DocumentLine.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_DocumentPerDay.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Employee.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Entity.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Header.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Inventory.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_ItemData.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_ItemHistory.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Job.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_JobLine.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Kit.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Line.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_LostSale.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Message.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Messenger.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_MetaData.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_MetaStructure.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Module.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_OrderInventoryHistory.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Organisations.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_OutstandingOrders.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_OutstandingTransfers.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_PayableItems.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_PaymentItems.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Period.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_PostPeriodFigures.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Printer.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_ReceivableItems.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Recon.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Report.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Role.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Site.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_SiteAccountType.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_StockDocument.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_StockDocumentLine.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_StockTake.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_StockTakeItem.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_StockTakeVariance.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Supplier.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Tax.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Transaction.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_User.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VW_Validation.cs">
+      <DependentUpon>CDSDBModelReadOnly.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\WorkshopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkshopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\WorkshopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\WorkshopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkshopModel.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\_Readme before editing EDMX.txt" />
+    <Content Include="SQL Updates\Dev_Updates.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DB\CDSDBModelReadOnly.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CDSDBModelReadOnly.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DB\CalendarModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CalendarModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DB\AccountingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AccountingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\AccountingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AccountingModel.edmx</DependentUpon>
+      <LastGenOutput>AccountingModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\AccountingModel.edmx.diagram">
+      <DependentUpon>AccountingModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\AccountingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AccountingModel.edmx</DependentUpon>
+      <LastGenOutput>AccountingModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="DB\BuyoutModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BuyoutModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\BuyoutModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BuyoutModel.edmx</DependentUpon>
+      <LastGenOutput>BuyoutModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\BuyoutModel.edmx.diagram">
+      <DependentUpon>BuyoutModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\BuyoutModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BuyoutModel.edmx</DependentUpon>
+      <LastGenOutput>BuyoutModel.cs</LastGenOutput>
+    </None>
+    <None Include="DB\CalendarModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CalendarModel.edmx</DependentUpon>
+      <LastGenOutput>CalendarModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\CalendarModel.edmx.diagram">
+      <DependentUpon>CalendarModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\CalendarModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CalendarModel.edmx</DependentUpon>
+      <LastGenOutput>CalendarModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="DB\CatalogueModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CatalogueModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\CatalogueModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CatalogueModel.edmx</DependentUpon>
+      <LastGenOutput>CatalogueModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\CatalogueModel.edmx.diagram">
+      <DependentUpon>CatalogueModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\CatalogueModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CatalogueModel.edmx</DependentUpon>
+      <LastGenOutput>CatalogueModel.cs</LastGenOutput>
+    </None>
+    <None Include="DB\CDSDBModelReadOnly.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CDSDBModelReadOnly.edmx</DependentUpon>
+      <LastGenOutput>CDSDBModelReadOnly.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\CDSDBModelReadOnly.edmx.diagram">
+      <DependentUpon>CDSDBModelReadOnly.edmx</DependentUpon>
+    </None>
+    <None Include="DB\CDSDBModelReadOnly.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CDSDBModelReadOnly.edmx</DependentUpon>
+      <LastGenOutput>CDSDBModelReadOnly.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="DB\InventoryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InventoryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DB\HumanResourcesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HumanResourcesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\HumanResourcesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
+      <LastGenOutput>HumanResourcesModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\HumanResourcesModel.edmx.diagram">
+      <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\HumanResourcesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
+      <LastGenOutput>HumanResourcesModel.cs</LastGenOutput>
+    </None>
+    <None Include="DB\InventoryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InventoryModel.edmx</DependentUpon>
+      <LastGenOutput>InventoryModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\InventoryModel.edmx.diagram">
+      <DependentUpon>InventoryModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\InventoryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InventoryModel.edmx</DependentUpon>
+      <LastGenOutput>InventoryModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="DB\SecurityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SecurityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DB\WorkshopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WorkshopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DB\OrganisationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrganisationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DB\OrderingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrderingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\OrderingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrderingModel.edmx</DependentUpon>
+      <LastGenOutput>OrderingModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\OrderingModel.edmx.diagram">
+      <DependentUpon>OrderingModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\OrderingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrderingModel.edmx</DependentUpon>
+      <LastGenOutput>OrderingModel.cs</LastGenOutput>
+    </None>
+    <None Include="DB\OrganisationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrganisationModel.edmx</DependentUpon>
+      <LastGenOutput>OrganisationModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\OrganisationModel.edmx.diagram">
+      <DependentUpon>OrganisationModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\OrganisationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrganisationModel.edmx</DependentUpon>
+      <LastGenOutput>OrganisationModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="DB\ReportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\ReportModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+      <LastGenOutput>ReportModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\ReportModel.edmx.diagram">
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\ReportModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+      <LastGenOutput>ReportModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="DB\SystemModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SystemModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\SecurityModel.Context.tt">
+      <DependentUpon>SecurityModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SecurityModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\SecurityModel.edmx.diagram">
+      <DependentUpon>SecurityModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\SecurityModel.tt">
+      <DependentUpon>SecurityModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SecurityModel.cs</LastGenOutput>
+    </None>
+    <None Include="DB\SystemModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SystemModel.edmx</DependentUpon>
+      <LastGenOutput>SystemModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\SystemModel.edmx.diagram">
+      <DependentUpon>SystemModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\SystemModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SystemModel.edmx</DependentUpon>
+      <LastGenOutput>SystemModel.cs</LastGenOutput>
+    </None>
+    <None Include="DB\WorkshopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WorkshopModel.edmx</DependentUpon>
+      <LastGenOutput>WorkshopModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\WorkshopModel.edmx.diagram">
+      <DependentUpon>WorkshopModel.edmx</DependentUpon>
+    </None>
+    <None Include="DB\WorkshopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WorkshopModel.edmx</DependentUpon>
+      <LastGenOutput>WorkshopModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XDB\CDSXDBModel.xpo" />
+    <None Include="XDB\CDSXDBModel.xpo.diagram">
+      <DependentUpon>CDSXDBModel.xpo</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDS.Shared.Exception\CDS.Shared.Exception.csproj">
+      <Project>{086d0531-5ad2-409b-9b49-40f93c98d4c4}</Project>
+      <Name>CDS.Shared.Exception</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

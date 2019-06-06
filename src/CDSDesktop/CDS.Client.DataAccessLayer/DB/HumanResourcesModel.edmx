@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HumanResourcesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HRS_Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Salutation" Type="varchar" MaxLength="5" />
+          <Property Name="Nickname" Type="varchar" MaxLength="100" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="IdNumber" Type="varchar" MaxLength="20" />
+          <Property Name="PassportNumber" Type="varchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="MaritalStatus" Type="bit" />
+          <Property Name="NoOfDependents" Type="smallint" />
+          <Property Name="RevenueOffice" Type="varchar" MaxLength="50" />
+          <Property Name="TaxNumber" Type="varchar" MaxLength="20" />
+          <Property Name="JobDescription" Type="varchar" MaxLength="2000" />
+          <Property Name="WorkNumber" Type="varchar" MaxLength="20" />
+          <Property Name="HomeNumber" Type="varchar" MaxLength="20" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="PhysicalAddress" Type="varchar" MaxLength="1000" />
+          <Property Name="PostalAddress" Type="varchar" MaxLength="1000" />
+          <Property Name="ContactName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactTelephone" Type="varchar" MaxLength="100" />
+          <Property Name="RoleId" Type="bigint" Nullable="false" />
+          <Property Name="PersonId" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="HRS_Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="2000" />
+          <Property Name="Appointment" Type="bit" />
+          <Property Name="SaleAppointment" Type="bit" />
+          <Property Name="PurchaseAppointment" Type="bit" />
+          <Property Name="WorkshopAppointment" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_HRS_Employee_HRS_Role">
+          <End Role="HRS_Role" Type="Self.HRS_Role" Multiplicity="1" />
+          <End Role="HRS_Employee" Type="Self.HRS_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HRS_Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HRS_Employee">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HumanResourcesModelStoreContainer">
+          <EntitySet Name="HRS_Employee" EntityType="Self.HRS_Employee" Schema="CDS_HRS" store:Type="Tables" />
+          <EntitySet Name="HRS_Role" EntityType="Self.HRS_Role" Schema="CDS_HRS" store:Type="Tables" />
+          <AssociationSet Name="FK_HRS_Employee_HRS_Role" Association="Self.FK_HRS_Employee_HRS_Role">
+            <End Role="HRS_Role" EntitySet="HRS_Role" />
+            <End Role="HRS_Employee" EntitySet="HRS_Employee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDSEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HumanResourcesEntityTables" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="HRS_Employee" EntityType="CDSEntityModel.HRS_Employee" />
+          <EntitySet Name="HRS_Role" EntityType="CDSEntityModel.HRS_Role" />
+          <AssociationSet Name="FK_HRS_Employee_HRS_Role" Association="CDSEntityModel.FK_HRS_Employee_HRS_Role">
+            <End Role="HRS_Role" EntitySet="HRS_Role" />
+            <End Role="HRS_Employee" EntitySet="HRS_Employee" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="HRS_Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Salutation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Nickname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IdNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PassportNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="MaritalStatus" Type="Boolean" />
+          <Property Name="NoOfDependents" Type="Int16" />
+          <Property Name="RevenueOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaxNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="JobDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="WorkNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HomeNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhysicalAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PostalAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactTelephone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RoleId" Type="Int64" Nullable="false" />
+          <Property Name="PersonId" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="HRS_Role" Relationship="CDSEntityModel.FK_HRS_Employee_HRS_Role" FromRole="HRS_Employee" ToRole="HRS_Role" />
+        </EntityType>
+        <EntityType Name="HRS_Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Appointment" Type="Boolean" />
+          <Property Name="SaleAppointment" Type="Boolean" />
+          <Property Name="PurchaseAppointment" Type="Boolean" />
+          <Property Name="WorkshopAppointment" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="HRS_Employee" Relationship="CDSEntityModel.FK_HRS_Employee_HRS_Role" FromRole="HRS_Role" ToRole="HRS_Employee" />
+        </EntityType>
+        <Association Name="FK_HRS_Employee_HRS_Role">
+          <End Type="CDSEntityModel.HRS_Role" Role="HRS_Role" Multiplicity="1" />
+          <End Type="CDSEntityModel.HRS_Employee" Role="HRS_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HRS_Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HRS_Employee">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HumanResourcesModelStoreContainer" CdmEntityContainer="HumanResourcesEntityTables">
+          <EntitySetMapping Name="HRS_Employee">
+            <EntityTypeMapping TypeName="CDSEntityModel.HRS_Employee">
+              <MappingFragment StoreEntitySet="HRS_Employee">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ContactTelephone" ColumnName="ContactTelephone" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+                <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="HomeNumber" ColumnName="HomeNumber" />
+                <ScalarProperty Name="WorkNumber" ColumnName="WorkNumber" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+                <ScalarProperty Name="RevenueOffice" ColumnName="RevenueOffice" />
+                <ScalarProperty Name="NoOfDependents" ColumnName="NoOfDependents" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HRS_Role">
+            <EntityTypeMapping TypeName="CDSEntityModel.HRS_Role">
+              <MappingFragment StoreEntitySet="HRS_Role">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="WorkshopAppointment" ColumnName="WorkshopAppointment" />
+                <ScalarProperty Name="PurchaseAppointment" ColumnName="PurchaseAppointment" />
+                <ScalarProperty Name="SaleAppointment" ColumnName="SaleAppointment" />
+                <ScalarProperty Name="Appointment" ColumnName="Appointment" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

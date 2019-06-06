@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDSEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CAL_Attachment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CalendarId" Type="bigint" Nullable="false" />
+          <Property Name="DocumentId" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="CAL_Calendar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LabelId" Type="smallint" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="AllDay" Type="bit" />
+          <Property Name="Location" Type="varchar" MaxLength="100" />
+          <Property Name="PercentComplete" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RecurrenceInfo" Type="text" />
+          <Property Name="ReminderInfo" Type="text" />
+          <Property Name="ResourceId" Type="bigint" />
+          <Property Name="StatusId" Type="smallint" />
+          <Property Name="TypeId" Type="smallint" />
+          <Property Name="DocumentId" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Vehicle" Type="varchar" MaxLength="50" />
+          <Property Name="Registration" Type="varchar" MaxLength="50" />
+          <Property Name="Mileage" Type="varchar" MaxLength="50" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="EntityId" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_CAL_Attachment_CAL_Calendar">
+          <End Role="CAL_Calendar" Type="Self.CAL_Calendar" Multiplicity="1" />
+          <End Role="CAL_Attachment" Type="Self.CAL_Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAL_Calendar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CAL_Attachment">
+              <PropertyRef Name="CalendarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CDSEntityModelStoreContainer">
+          <EntitySet Name="CAL_Attachment" EntityType="Self.CAL_Attachment" Schema="CDS_CAL" store:Type="Tables" />
+          <EntitySet Name="CAL_Calendar" EntityType="Self.CAL_Calendar" Schema="CDS_CAL" store:Type="Tables" />
+          <AssociationSet Name="FK_CAL_Attachment_CAL_Calendar" Association="Self.FK_CAL_Attachment_CAL_Calendar">
+            <End Role="CAL_Calendar" EntitySet="CAL_Calendar" />
+            <End Role="CAL_Attachment" EntitySet="CAL_Attachment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDSEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CalendarEntityTables" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CAL_Attachment" EntityType="CDSEntityModel.CAL_Attachment" />
+          <EntitySet Name="CAL_Calendar" EntityType="CDSEntityModel.CAL_Calendar" />
+          <AssociationSet Name="FK_CAL_Attachment_CAL_Calendar" Association="CDSEntityModel.FK_CAL_Attachment_CAL_Calendar">
+            <End Role="CAL_Calendar" EntitySet="CAL_Calendar" />
+            <End Role="CAL_Attachment" EntitySet="CAL_Attachment" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CAL_Attachment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CalendarId" Type="Int64" Nullable="false" />
+          <Property Name="DocumentId" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <NavigationProperty Name="CAL_Calendar" Relationship="CDSEntityModel.FK_CAL_Attachment_CAL_Calendar" FromRole="CAL_Attachment" ToRole="CAL_Calendar" />
+        </EntityType>
+        <EntityType Name="CAL_Calendar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LabelId" Type="Int16" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="AllDay" Type="Boolean" />
+          <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PercentComplete" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RecurrenceInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReminderInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ResourceId" Type="Int64" />
+          <Property Name="StatusId" Type="Int16" />
+          <Property Name="TypeId" Type="Int16" />
+          <Property Name="DocumentId" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mileage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EntityId" Type="Int64" />
+          <NavigationProperty Name="CAL_Attachment" Relationship="CDSEntityModel.FK_CAL_Attachment_CAL_Calendar" FromRole="CAL_Calendar" ToRole="CAL_Attachment" />
+        </EntityType>
+        <Association Name="FK_CAL_Attachment_CAL_Calendar">
+          <End Type="CDSEntityModel.CAL_Calendar" Role="CAL_Calendar" Multiplicity="1" />
+          <End Type="CDSEntityModel.CAL_Attachment" Role="CAL_Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAL_Calendar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CAL_Attachment">
+              <PropertyRef Name="CalendarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDSEntityModelStoreContainer" CdmEntityContainer="CalendarEntityTables">
+          <EntitySetMapping Name="CAL_Attachment">
+            <EntityTypeMapping TypeName="CDSEntityModel.CAL_Attachment">
+              <MappingFragment StoreEntitySet="CAL_Attachment">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="CalendarId" ColumnName="CalendarId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAL_Calendar">
+            <EntityTypeMapping TypeName="CDSEntityModel.CAL_Calendar">
+              <MappingFragment StoreEntitySet="CAL_Calendar">
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="Registration" ColumnName="Registration" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+                <ScalarProperty Name="ReminderInfo" ColumnName="ReminderInfo" />
+                <ScalarProperty Name="RecurrenceInfo" ColumnName="RecurrenceInfo" />
+                <ScalarProperty Name="PercentComplete" ColumnName="PercentComplete" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="AllDay" ColumnName="AllDay" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="LabelId" ColumnName="LabelId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

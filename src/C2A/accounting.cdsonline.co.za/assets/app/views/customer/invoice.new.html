@@ -1,0 +1,315 @@
+﻿
+<!-- begin: .tray-center -->
+<div class="tray tray-center">
+    <div class="">
+        <div class="tab-content center-block center-children">
+
+            <!-- Project Quote -->
+            <div class="admin-form theme-warning" id="quote1" role="tabpanel">
+                <div class="panel panel-warning heading-border">
+                    <div class="panel-heading">
+                        <span class="panel-title">
+                            <i class="fa fa-file-text-o"></i>{{ readOnly === true ? 'Invoice #: ' + document.documentheader.documentNumber : 'New Invoice'}}
+                        </span>
+                    </div>
+                    <!-- end .form-header section -->
+
+                        <div class="panel-body p25">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="section">
+                                        <label class="field-label">Company</label>
+                                        <label class="field select">
+                                            <select ng-disabled="readOnly == true" id="company" name="company" ng-model="document.companyId" ng-options="company.id as company.code + ' - ' + company.name for company in companyResults" ng-change="selectCompany()">
+                                                <option value="">Select Company...</option>
+                                                <option value="company.id">{{ company.code + " - " + company.name }}</option>
+                                            </select>
+                                            <i class="arrow"></i>
+                                        </label>
+                                        <div class="smart-widget sm-right smr-50 hidden">
+                                            <label class="field" ng-show="companyResults.length == 0">
+                                                <input type="text" name="companySearch" id="companySearch" class="gui-input" placeholder="Company..." ng-model="document.companyName" ng-keypress="SearchCompanyOnEnter($event)">
+                                            </label>
+                                            <button type="submit" class="button" ng-click="searchCompany()" ng-show="companyResults.length == 0">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="section" ng-show="document.documentheader.documentNumber > 0">
+                                        <label class="field-label">Invoice number</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="documentNumber" id="documentNumber" class="gui-input" placeholder="Invoice number..." ng-model="document.documentheader.documentNumber">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section row">
+                                <div class="col-md-4">
+                                    <div class="section">
+                                        <label class="field-label">Address Line 1</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="BillingAddressLine1" id="BillingAddressLine1" class="gui-input" placeholder="Address Line 1..." ng-model="document.billingAddressLine1">
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                    <div class="section">
+                                        <label class="field-label">Address Line 2</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="BillingAddressLine2" id="BillingAddressLine2" class="gui-input" placeholder="Address Line 2..." ng-model="document.billingAddressLine2">
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                    <div class="section">
+                                        <label class="field-label">Address Line 3</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="BillingAddressLine3" id="BillingAddressLine3" class="gui-input" placeholder="Address Line 3..." ng-model="document.billingAddressLine3">
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                </div>
+                                <!-- end .colm section -->
+
+                                <div class="col-md-4">
+                                    <div class="section">
+                                        <label class="field-label">Salesman Code</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="ReferenceShort1" id="ReferenceShort1" class="gui-input" placeholder="Salesman Code..." ng-model="document.referenceShort1">
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                    <div class="section">
+                                        <label class="field-label">Rep Code</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="ReferenceShort2" id="ReferenceShort2" class="gui-input" placeholder="Rep Code..." ng-model="document.referenceShort2">
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+                                </div>
+                                <!-- end .colm section -->
+
+                                <div class="col-md-4">
+                                    <div class="section">
+                                        <label class="field-label">Date</label>
+                                        <label for="DatePosted" class="field prepend-icon">
+                                            <input ng-disabled="readOnly == true" type="text" id="DatePosted" name="DatePosted" class="gui-input" placeholder="Datepicker Popup" ng-model="document.datePosted">
+                                            <label class="field-icon">
+                                                <i class="fa fa-calendar-o"></i>
+                                            </label>
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                    <div class="section">
+                                        <label class="field-label">Order Number</label>
+                                        <label class="field">
+                                            <input ng-disabled="readOnly == true" type="text" name="ReferenceShort3" id="ReferenceShort3" class="gui-input" placeholder="Order Number..." ng-model="document.referenceShort3">
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                    <div class="section hidden">
+                                        <label class="field-label">Discount</label>
+                                        <label class="field append-icon">
+                                            <input ng-disabled="readOnly == true" type="text" name="discount" id="discount" class="gui-input" placeholder="Discount..." ng-model="document.documentheader.discount">
+                                            <label class="field-icon">
+                                                <i class="fa fa-percent"></i>
+                                            </label>
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                </div>
+                                <!-- end .colm section -->
+
+                            </div>
+                            <!-- end .section row section -->
+                            <!-- recent orders table -->
+
+                            <form class="hidden" editable-form name="tableform" onaftersave="saveTable()" oncancel="cancel()">
+                                <div class="panel">
+                                    <div class="panel-body pn">
+                                        <div class="table-responsive">
+                                            <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                                                <thead>
+                                                    <tr class="bg-light">
+                                                        <th class="">Item</th>
+                                                        <th class="">Description</th>
+                                                        <th class="">QTY</th>
+                                                        <th class="">Price</th>
+                                                        <th class="">Tax</th>
+                                                        <th class="">Total</th>
+                                                        <th class="text-right">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="line in document.lines | filter:filterLine">
+                                                        <td class=""><span editable-select="line.itemId" e-form="tableform">{{ line.itemId }}</span></td>
+                                                        <td class=""><span editable-text="line.description" e-form="tableform">{{ line.description }}</span></td>
+                                                        <td class=""><span editable-text="line.quantity" e-form="tableform">{{ line.quantity }}</span></td>
+                                                        <td class=""><span editable-text="line.amount" e-form="tableform">{{ line.amount | number:2 }}</span></td>
+                                                        <td class=""><span editable-text="line.totalVat" e-form="tableform">{{ line.totalVat | number:2 }}</span></td>
+                                                        <td class=""><span editable-text="line.total" e-form="tableform">{{ line.total | number:2 }}</span></td>
+                                                        <td class="text-right">
+                                                            <button type="button" ng-click="deleteLine(line.lineOrder)" class="btn btn-danger pull-right">Del</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- buttons -->
+                                <div class="btn-edit">
+                                    <button type="button" class="btn btn-default" ng-show="!tableform.$visible" ng-click="tableform.$show()">
+                                        edit
+                                    </button>
+                                </div>
+                                <div class="btn-form" ng-show="tableform.$visible">
+                                    <button type="button" ng-disabled="tableform.$waiting" ng-click="addLine()" class="btn btn-default pull-right">add row</button>
+                                    <button type="submit" ng-disabled="tableform.$waiting" class="btn btn-primary">save</button>
+                                    <button type="button" ng-disabled="tableform.$waiting" ng-click="tableform.$cancel()" class="btn btn-default">cancel</button>
+                                </div>
+                            </form>
+                            <!-- end .section row section -->
+                            <div class="panel">
+                                <div class="panel-body pn">
+                                    <div class="table-responsive">
+                                        <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                                            <thead>
+                                                <tr class="bg-light">
+                                                    <th class="">Item</th>
+                                                    <th class="">Description</th>
+                                                    <th class="">QTY</th>
+                                                    <th class="">Price</th>
+                                                    <th class="">Vat (14%)</th>
+                                                    <th class="">Total</th>
+                                                    <th class="text-right">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot ng-show="document.documentheader.documentLines.length > 0">
+                                                <tr class="bg-light">
+                                                    <th class=""></th>
+                                                    <th class=""></th>
+                                                    <th class=""></th>
+                                                    <th class=""></th>
+                                                    <th class="">
+                                                        <label for="website" class="field">
+                                                            <input type="text" name="TotalVat" class="gui-input" ng-value="documentTotalVat()">
+                                                        </label>
+                                                    </th>
+                                                    <th class="">
+                                                        <label for="website" class="field">
+                                                            <input type="text" name="TotalAmount" class="gui-input" ng-value="documentTotal()">
+                                                        </label>
+                                                    </th>
+                                                    <th class=""></th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr ng-repeat="line in document.documentheader.documentLines">
+                                                    <td class="">
+                                                        <label class="field select">
+                                                            <select ng-disabled="readOnly == true" id="item" name="item" ng-model="line.itemId" ng-options="item.id as item.name for item in itemResults">
+                                                                <option value="">Select Items...</option>
+                                                                <option value="item.id">{{ item.name }}</option>
+                                                            </select>
+                                                            <i class="arrow"></i>
+                                                        </label>
+                                                    </td>
+                                                    <td class="">
+                                                        <label for="website" class="field">
+                                                            <input ng-disabled="readOnly == true" type="text" name="Description" id="Description" class="gui-input" ng-model="line.description">
+                                                        </label>
+                                                    </td>
+                                                    <td class="">
+                                                        <label for="website" class="field">
+                                                            <input ng-disabled="readOnly == true" type="number" name="Quantity" id="Quantity" class="gui-input" ng-model="line.quantity">
+                                                        </label>
+                                                    </td>
+                                                    <td class="">
+                                                        <label for="website" class="field">
+                                                            <input ng-disabled="readOnly == true" type="number" name="Amount" id="Amount" class="gui-input" ng-model="line.amount">
+                                                        </label>
+                                                    </td>
+                                                    <td class="">
+                                                        <label for="website" class="field">
+                                                            <input ng-disabled="readOnly == true" type="text" name="TotalVat" id="TotalVat" class="gui-input disabled" ng-value="LineVat(line)" ng-readonly="true">
+                                                        </label>
+                                                    </td>
+                                                    <td class="">
+                                                        <label for="website" class="field">
+                                                            <input ng-disabled="readOnly == true" type="text" name="Total" id="Total" class="gui-input disabled" ng-value="LineTotal(line)" ng-readonly="true">
+                                                        </label>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <button ng-show="readOnly != true" type="button" ng-click="deleteLine(line)" class="btn btn-danger pull-right">Del</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- buttons -->
+                            <div class="btn-edit">
+                                <button ng-show="readOnly != true" type="button" ng-click="addLine()" class="btn btn-system">add line</button>
+                            </div>
+                        </div>
+                        <!-- end .form-body section -->
+                        <div class="panel-footer">
+                            <button type="submit" class="button btn-primary" ng-click="saveDocument()" ng-show="readOnly != true">Save</button>
+                            <button type="submit" class="button btn-system" ng-click="printDocument()" ng-show="readOnly == true">Print</button>
+                        </div>
+                        <!-- end .form-footer section -->
+                    
+                </div>
+                <!-- end .admin-form section -->
+            </div>
+            <!-- end: .admin-form -->
+
+        </div>
+
+    </div>
+</div>
+<!-- end: .tray-center -->
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
+        "use strict";
+        /* @date picker
+            ------------------------------------------------------------------ */
+        $("#DatePosted").datepicker({
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false,
+            beforeShow: function (input, inst) {
+                var newclass = 'admin-form';
+                var themeClass = $(this).parents('.admin-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+
+        $('.inline-dp').datepicker({
+            numberOfMonths: 1,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false
+        });
+    });
+</script>
+
+

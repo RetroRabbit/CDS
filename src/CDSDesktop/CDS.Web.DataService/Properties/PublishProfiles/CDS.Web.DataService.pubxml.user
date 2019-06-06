@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\CDS.Web.DataService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/CDS.Client.BusinessLayer.dll">
+      <publishTime>04/23/2015 14:18:23</publishTime>
+    </File>
+    <File Include="bin/CDS.Client.BusinessLayer.pdb">
+      <publishTime>04/23/2015 14:18:23</publishTime>
+    </File>
+    <File Include="bin/CDS.Client.DataAccessLayer.dll">
+      <publishTime>04/23/2015 14:18:22</publishTime>
+    </File>
+    <File Include="bin/CDS.Client.DataAccessLayer.pdb">
+      <publishTime>04/23/2015 14:18:22</publishTime>
+    </File>
+    <File Include="bin/CDS.Shared.Exception.dll">
+      <publishTime>04/23/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/CDS.Shared.Exception.pdb">
+      <publishTime>04/23/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/CDS.Util.TextPrinter.dll">
+      <publishTime>04/23/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/CDS.Util.TextPrinter.pdb">
+      <publishTime>04/23/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/CDS.Web.DataService.dll">
+      <publishTime>04/23/2015 14:22:19</publishTime>
+    </File>
+    <File Include="bin/CDS.Web.DataService.pdb">
+      <publishTime>04/23/2015 14:22:19</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/20/2015 08:43:01</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/20/2015 08:42:55</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>01/20/2015 08:41:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll">
+      <publishTime>01/20/2015 08:41:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll">
+      <publishTime>01/20/2015 08:41:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll">
+      <publishTime>01/20/2015 08:41:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>01/20/2015 08:41:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>01/20/2015 08:41:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.dll">
+      <publishTime>01/20/2015 08:41:57</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/20/2015 08:43:33</publishTime>
+    </File>
+    <File Include="CDSService.svc">
+      <publishTime>01/20/2015 08:42:38</publishTime>
+    </File>
+    <File Include="Layout/LayoutAdjustment.xml">
+      <publishTime>01/20/2015 08:42:39</publishTime>
+    </File>
+    <File Include="Layout/LayoutPicking.xml">
+      <publishTime>04/20/2015 09:23:43</publishTime>
+    </File>
+    <File Include="Layout/LayoutPurchase.xml">
+      <publishTime>04/20/2015 09:23:44</publishTime>
+    </File>
+    <File Include="Layout/LayoutReceipt.xml">
+      <publishTime>04/20/2015 09:23:44</publishTime>
+    </File>
+    <File Include="Layout/LayoutSales.xml">
+      <publishTime>04/20/2015 09:23:44</publishTime>
+    </File>
+    <File Include="Layout/LayoutWork.xml">
+      <publishTime>01/20/2015 08:42:39</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/20/2015 08:42:38</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/23/2015 14:22:19</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

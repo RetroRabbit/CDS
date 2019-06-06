@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2a36ccb1f4de443bb634d6e2f0f58505" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_Company" Width="1.5" PointX="3" PointY="9.5" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_CompanyAddress" Width="1.5" PointX="5.25" PointY="27.875" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_CostCategory" Width="1.5" PointX="0.75" PointY="12.875" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_Department" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_Distribution" Width="1.5" PointX="5.25" PointY="13.5" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_DistributionType" Width="1.5" PointX="3" PointY="18.875" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_Entity" Width="1.5" PointX="0.75" PointY="15.375" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_History" Width="1.5" PointX="5.25" PointY="30.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_PaymentTerm" Width="1.5" PointX="0.75" PointY="18.625" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_StatementPreference" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_TRX_Header" Width="1.5" PointX="8.25" PointY="9.125" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_TRX_LostSale" Width="1.5" PointX="5.25" PointY="9.375" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_TRX_ShippingType" Width="1.5" PointX="6" PointY="6.875" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_Type" Width="1.5" PointX="0.75" PointY="10" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Company_ORG_CostCategory" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Company_ORG_Entity" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Company_ORG_SalesTerm" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Company_ORG_Type" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_CompanyAddress_ORG_Company" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Distribution_ORG_Company" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_History_ORG_Company" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_TRX_Header_SYS_Entity_Company" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_TRX_LostSale_ORG_Company" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Distribution_ORG_DistributionType" />
+        <AssociationConnector Association="CDSEntityModel.FK_TRX_Header_TRX_ShippingType" />
+        <EntityTypeShape EntityType="CDSEntityModel.ORG_Contact" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="CDSEntityModel.FK_ORG_Contact_ORG_Department" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

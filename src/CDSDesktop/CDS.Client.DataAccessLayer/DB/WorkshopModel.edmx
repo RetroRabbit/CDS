@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDSEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="JOB_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeaderId" Type="bigint" Nullable="false" />
+          <Property Name="CompanyId" Type="bigint" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactTelephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateFirstPrinted" Type="datetime" />
+          <Property Name="DateLastPrinted" Type="datetime" />
+          <Property Name="Date1" Type="datetime" />
+          <Property Name="Date2" Type="datetime" />
+          <Property Name="Date3" Type="datetime" />
+          <Property Name="ReferenceShort1" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort2" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort3" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort4" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort5" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort6" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort7" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort8" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort9" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceShort10" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReferenceLong1" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong3" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong4" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferenceLong5" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShippingAddressLine1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddressLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddressLine3" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddressLine4" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddressCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="BillingAddressLine1" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingAddressLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingAddressLine3" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingAddressLine4" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingAddressCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="CDSEntityModelStoreContainer">
+          <EntitySet Name="JOB_Header" EntityType="Self.JOB_Header" Schema="CDS_JOB" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDSEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WorkshopEntityTables" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="JOB_Header" EntityType="CDSEntityModel.JOB_Header" />
+        </EntityContainer>
+        <EntityType Name="JOB_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeaderId" Type="Int64" Nullable="false" />
+          <Property Name="CompanyId" Type="Int64" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateFirstPrinted" Type="DateTime" Precision="3" />
+          <Property Name="DateLastPrinted" Type="DateTime" Precision="3" />
+          <Property Name="Date1" Type="DateTime" Precision="3" />
+          <Property Name="Date2" Type="DateTime" Precision="3" />
+          <Property Name="Date3" Type="DateTime" Precision="3" />
+          <Property Name="ReferenceShort1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort6" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort7" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort8" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort9" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceShort10" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceLong5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressLine4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddressCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressLine4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddressCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedBy" Type="Int64" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDSEntityModelStoreContainer" CdmEntityContainer="WorkshopEntityTables">
+          <EntitySetMapping Name="JOB_Header">
+            <EntityTypeMapping TypeName="CDSEntityModel.JOB_Header">
+              <MappingFragment StoreEntitySet="JOB_Header">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="BillingAddressCode" ColumnName="BillingAddressCode" />
+                <ScalarProperty Name="BillingAddressLine4" ColumnName="BillingAddressLine4" />
+                <ScalarProperty Name="BillingAddressLine3" ColumnName="BillingAddressLine3" />
+                <ScalarProperty Name="BillingAddressLine2" ColumnName="BillingAddressLine2" />
+                <ScalarProperty Name="BillingAddressLine1" ColumnName="BillingAddressLine1" />
+                <ScalarProperty Name="ShippingAddressCode" ColumnName="ShippingAddressCode" />
+                <ScalarProperty Name="ShippingAddressLine4" ColumnName="ShippingAddressLine4" />
+                <ScalarProperty Name="ShippingAddressLine3" ColumnName="ShippingAddressLine3" />
+                <ScalarProperty Name="ShippingAddressLine2" ColumnName="ShippingAddressLine2" />
+                <ScalarProperty Name="ShippingAddressLine1" ColumnName="ShippingAddressLine1" />
+                <ScalarProperty Name="ReferenceLong5" ColumnName="ReferenceLong5" />
+                <ScalarProperty Name="ReferenceLong4" ColumnName="ReferenceLong4" />
+                <ScalarProperty Name="ReferenceLong3" ColumnName="ReferenceLong3" />
+                <ScalarProperty Name="ReferenceLong2" ColumnName="ReferenceLong2" />
+                <ScalarProperty Name="ReferenceLong1" ColumnName="ReferenceLong1" />
+                <ScalarProperty Name="ReferenceShort10" ColumnName="ReferenceShort10" />
+                <ScalarProperty Name="ReferenceShort9" ColumnName="ReferenceShort9" />
+                <ScalarProperty Name="ReferenceShort8" ColumnName="ReferenceShort8" />
+                <ScalarProperty Name="ReferenceShort7" ColumnName="ReferenceShort7" />
+                <ScalarProperty Name="ReferenceShort6" ColumnName="ReferenceShort6" />
+                <ScalarProperty Name="ReferenceShort5" ColumnName="ReferenceShort5" />
+                <ScalarProperty Name="ReferenceShort4" ColumnName="ReferenceShort4" />
+                <ScalarProperty Name="ReferenceShort3" ColumnName="ReferenceShort3" />
+                <ScalarProperty Name="ReferenceShort2" ColumnName="ReferenceShort2" />
+                <ScalarProperty Name="ReferenceShort1" ColumnName="ReferenceShort1" />
+                <ScalarProperty Name="Date3" ColumnName="Date3" />
+                <ScalarProperty Name="Date2" ColumnName="Date2" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
+                <ScalarProperty Name="DateLastPrinted" ColumnName="DateLastPrinted" />
+                <ScalarProperty Name="DateFirstPrinted" ColumnName="DateFirstPrinted" />
+                <ScalarProperty Name="ContactTelephone" ColumnName="ContactTelephone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

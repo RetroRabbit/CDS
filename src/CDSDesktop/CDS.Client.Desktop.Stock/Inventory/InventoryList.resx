@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="XPOInstantFeedbackSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="XPOInstantFeedbackSource.DisplayableProperties" xml:space="preserve">
+    <value>Archived;PrimaryKey;CombinedKey;Id;EntityId.PrimaryKey;EntityId.AccountBalance;EntityId.SiteAccount;EntityId.ShowOnSales;EntityId.ShowOnPurchases;EntityId.OnHand;EntityId.OnHold;EntityId.OnReserve;EntityId.OnOrder;EntityId.UnitPrice;EntityId.UnitCost;EntityId.UnitAverage;EntityId.FirstSold;EntityId.LastMovement;EntityId.FirstPurchased;EntityId.LastSold;EntityId.SupplierStockCode;EntityId.Category;EntityId.SubCategory;EntityId.StockType;EntityId.LocationMain;EntityId.LocationSecondary;EntityId.DiscountCode;EntityId.Grouping;EntityId.ProfitMargin;EntityId.Barcode;EntityId.HasCustomer;EntityId.HasSupplier;EntityId.HasBuyoutQuantity;EntityId.Id;EntityId.TypeId.Id;EntityId.TypeId.Name;EntityId.CodeMain;EntityId.CodeSub;EntityId.ShortName;EntityId.Name;EntityId.Description;EntityId.Archived;EntityId.CreatedBy.Id;EntityId.CreatedBy.Title;EntityId.CreatedBy.Name;EntityId.CreatedBy.Surname;EntityId.CreatedBy.Archived;EntityId.CreatedBy.CreatedOn;EntityId.CreatedBy.Fullname;EntityId.CreatedOn;EntityId.Title;CostofSalesId.PrimaryKey;CostofSalesId.AccountBalance;CostofSalesId.SiteAccount;CostofSalesId.ShowOnSales;CostofSalesId.ShowOnPurchases;CostofSalesId.OnHand;CostofSalesId.OnHold;CostofSalesId.OnReserve;CostofSalesId.OnOrder;CostofSalesId.UnitPrice;CostofSalesId.UnitCost;CostofSalesId.UnitAverage;CostofSalesId.FirstSold;CostofSalesId.LastMovement;CostofSalesId.FirstPurchased;CostofSalesId.LastSold;CostofSalesId.SupplierStockCode;CostofSalesId.Category;CostofSalesId.SubCategory;CostofSalesId.StockType;CostofSalesId.LocationMain;CostofSalesId.LocationSecondary;CostofSalesId.DiscountCode;CostofSalesId.Grouping;CostofSalesId.ProfitMargin;CostofSalesId.Barcode;CostofSalesId.HasCustomer;CostofSalesId.HasSupplier;CostofSalesId.HasBuyoutQuantity;CostofSalesId.Id;CostofSalesId.TypeId.Id;CostofSalesId.TypeId.Name;CostofSalesId.CodeMain;CostofSalesId.CodeSub;CostofSalesId.ShortName;CostofSalesId.Name;CostofSalesId.Description;CostofSalesId.Archived;CostofSalesId.CreatedBy.Id;CostofSalesId.CreatedBy.Title;CostofSalesId.CreatedBy.Name;CostofSalesId.CreatedBy.Surname;CostofSalesId.CreatedBy.Archived;CostofSalesId.CreatedBy.CreatedOn;CostofSalesId.CreatedBy.Fullname;CostofSalesId.CreatedOn;CostofSalesId.Title;InventoryId.PrimaryKey;InventoryId.AccountBalance;InventoryId.SiteAccount;InventoryId.ShowOnSales;InventoryId.ShowOnPurchases;InventoryId.OnHand;InventoryId.OnHold;InventoryId.OnReserve;InventoryId.OnOrder;InventoryId.UnitPrice;InventoryId.UnitCost;InventoryId.UnitAverage;InventoryId.FirstSold;InventoryId.LastMovement;InventoryId.FirstPurchased;InventoryId.LastSold;InventoryId.SupplierStockCode;InventoryId.Category;InventoryId.SubCategory;InventoryId.StockType;InventoryId.LocationMain;InventoryId.LocationSecondary;InventoryId.DiscountCode;InventoryId.Grouping;InventoryId.ProfitMargin;InventoryId.Barcode;InventoryId.HasCustomer;InventoryId.HasSupplier;InventoryId.HasBuyoutQuantity;InventoryId.Id;InventoryId.TypeId.Id;InventoryId.TypeId.Name;InventoryId.CodeMain;InventoryId.CodeSub;InventoryId.ShortName;InventoryId.Name;InventoryId.Description;InventoryId.Archived;InventoryId.CreatedBy.Id;InventoryId.CreatedBy.Title;InventoryId.CreatedBy.Name;InventoryId.CreatedBy.Surname;InventoryId.CreatedBy.Archived;InventoryId.CreatedBy.CreatedOn;InventoryId.CreatedBy.Fullname;InventoryId.CreatedOn;InventoryId.Title;Comment;Category;OnHand;OnHold;OnOrder;UnitAverage;UnitPrice;UnitCost;SubCategory;StockType;LocationMain;LocationSecondary;Barcode;MinimumStockLevel;MaximumStockLevel;SafetyStock;WarehousingCost;DiscountCode;Grouping;ProfitMargin;LabelFlag;RequireSerial;SellingPackSize;CreatedOn;CreatedBy.Id;CreatedBy.Title;CreatedBy.Name;CreatedBy.Surname;CreatedBy.Archived;CreatedBy.CreatedOn;CreatedBy.CreatedBy.Id;CreatedBy.CreatedBy.Title;CreatedBy.CreatedBy.Name;CreatedBy.CreatedBy.Surname;CreatedBy.CreatedBy.Archived;CreatedBy.CreatedBy.CreatedOn;CreatedBy.CreatedBy.Fullname;CreatedBy.Fullname;SiteId.PrimaryKey;SiteId.AccountBalance;SiteId.SiteAccount;SiteId.ShowOnSales;SiteId.ShowOnPurchases;SiteId.OnHand;SiteId.OnHold;SiteId.OnReserve;SiteId.OnOrder;SiteId.UnitPrice;SiteId.UnitCost;SiteId.UnitAverage;SiteId.FirstSold;SiteId.LastMovement;SiteId.FirstPurchased;SiteId.LastSold;SiteId.SupplierStockCode;SiteId.Category;SiteId.SubCategory;SiteId.StockType;SiteId.LocationMain;SiteId.LocationSecondary;SiteId.DiscountCode;SiteId.Grouping;SiteId.ProfitMargin;SiteId.Barcode;SiteId.HasCustomer;SiteId.HasSupplier;SiteId.HasBuyoutQuantity;SiteId.Id;SiteId.TypeId.Id;SiteId.TypeId.Name;SiteId.CodeMain;SiteId.CodeSub;SiteId.ShortName;SiteId.Name;SiteId.Description;SiteId.Archived;SiteId.CreatedBy.Id;SiteId.CreatedBy.Title;SiteId.CreatedBy.Name;SiteId.CreatedBy.Surname;SiteId.CreatedBy.Archived;SiteId.CreatedBy.CreatedOn;SiteId.CreatedBy.Fullname;SiteId.CreatedOn;SiteId.Title</value>
+  </data>
+  <metadata name="DefaultToolTipController.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>218, 17</value>
+  </metadata>
+</root>
